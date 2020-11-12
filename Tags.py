@@ -11,7 +11,6 @@ tags = {
     251: 'webm 160kb/s (onlu audio)',
 }
 
-
 def get_available_qualities(url):
     video = pt.YouTube(url)
     qualities = []
@@ -20,13 +19,9 @@ def get_available_qualities(url):
             qualities.append(tags.get(i))
     return qualities
 
-
 def get_available_qualities_with_obj(youtube_obj):
     qualities = []
     for i in tags.keys():
         if youtube_obj.streams.get_by_itag(i):
             qualities.append(tags.get(i))
     return qualities
-
-
-#print( list( tags.keys() )[ list( tags.values() ).index( '720p' ) ] )

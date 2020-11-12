@@ -11,6 +11,13 @@ import threading
 import Tags
 import re
 
+# almost everything works as on 13th of october.
+# there are still a loooooot of bugs, but then they are all edge cases, and i need to fix them, but otherwise,
+# given a normal video, or a normal playlist, you can download it. the biggest flaw rn, is that you can only download til 720 of
+# video and audio progressive thing, i still don't know how exactly to combine it. i still also need to break up this project into
+# many other things as well. still have to clean up the code, but then it's already presentable rn.
+# kinda over. i can take some rest now.
+
 
 # defining Some constants
 
