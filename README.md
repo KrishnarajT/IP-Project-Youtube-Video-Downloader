@@ -8,7 +8,7 @@ IP project made by :
 It aims to be able to downlaod youtube vidoes with ease.
 
 
-##Features:
+## Features:
 1. Can download any youtube video from the URL
 2. Can download the video in either 720p with 360p with Audio
 3. Can download only the audio from a video.
