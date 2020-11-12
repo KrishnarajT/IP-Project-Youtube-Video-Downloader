@@ -5,7 +5,7 @@ IP project made by :
 2. Siddharth Jana
 4. Gourav Sharma
 
-It aims to be able to downlaod youtube vidoes with ease.
+It aims to let you downlaod youtube vidoes with ease.
 
 
 ## Features:
