@@ -27,11 +27,11 @@ It aims to let you downlaod youtube vidoes with ease.
 
 ## Installation
 
-#### _To run the Program executable file_ (not added yet)
+### _To run the Program executable file_ (not added yet)
 1. Windows  x86
 2. Connection to the Internet
 
-#### _To compile and edit the source code in your own Environment_ :
+### _To compile and edit the source code in your own Environment_ *(for collaborators)* :
 
 1. _Python 3.7 to 3.9_ as of date of upload
 2. Modules _pytube 9.7_, _pillow_, _requests_, _pandas_, _matplotlib_
