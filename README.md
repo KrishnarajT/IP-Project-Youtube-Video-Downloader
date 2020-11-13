@@ -58,3 +58,100 @@ and select that as the interpreter
 ## Limitations
 1. Can only download video+audio upto 720p
 2. Maximum of 50 videos of a playlist can be downloaded at once
+
+## Working
+
+### Pytube
+
+Every youtube video has a URL that is unique to the video.
+
+#### Single Video
+Example : 
+`https://www.youtube.com/watch?v=8kooIgKESYE`
+
+This video has a common part `https://www.youtube.com/watch?v=` and a unique part
+`8kooIgKESYE`
+
+The string `8kooIgKESYE` is the identification for the video, and is the address
+where the video is stored in the server. It is a base 64 number.
+
+To uniquely store the thumbnails of the videos that we download in the project, we
+use this number or string as the name of the thumbnail, as can be seen in the 
+script.
+
+Because not everyone has the same internet speed, when you upload a video, youtube
+stores the video in many formats ranging from 144p to the highest resolution of the 
+uploaded video
+
+If the video is greater than 1080p in resolution, It is difficult for a 4G network
+to download and render the video on the screens of the users, and hence it is 
+broken into audio and video.
+
+These different versions of the video, are called streams.
+
+Pytube has a Youtube and a Playlist class. So to download a video, we create an
+instance of the Class, an object, that has the urls of all these streams.
+
+To download the video, the user selects the quality and we give that quality of stream
+to pytube's youtube object, after which we can downlaod the video.
+
+#### Playlists
+
+`https://www.youtube.com/watch?v=-GhzpvvIXlM&list=PLS1QulWo1RIY6fmY_iTjEhCMsdtAjgbZM`
+
+is an example playlist, and follows much of the same rules as the other URL. A playlist is just 
+a bunch of video URL's that are given a name, an author and creation time.
+
+This data (the name, video urls etc are stored on the server, and that location
+is provided to us bt the playlist URL)
+
+so with this URL, we can simply get the Youtube video urls, and then the process of 
+creation of a youtube object is repeated and the video is downlaoded.
+
+
+### Graphs and Data Storage
+
+from the Youtube object, you can get data about the youtube video such as
+1. title
+2. views
+3. rating
+4. author
+5. discription
+etc
+
+so After downlaoding a video, this data is written to a single file, stored in `data/video_*`
+that can be verified manually.
+
+This data is written such that it does not overlap, and there are no repeated entries
+Storing this data in files is so that it can be retrieved later. If it was not for 
+files, we would save this data on an SQL server.
+
+We can retrieve the data from these files using the `fileIO.py` file. This file has a 
+`read` class, that has functions like `get_title()` or `get_views()` etc. These 
+functions can be used to get a list that has all the titles or the authors or the views
+of all the vidoes that we downloaded. 
+
+The first element of each file corresponds to the first video downloaded.
+
+these lists can then be further used to create pandas series, dataframes, and then
+create graphs. These functions will be written in the `graphs.py` file.
+
+These graphs are then integrated in the `main.py` file that are then displayed as 
+statistics in the program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
