@@ -24,7 +24,7 @@ It aims to let you downlaod youtube vidoes with ease.
 12. Uses tkinter for the created GUI and python's file management to store the user data.
 13. Offers Portability to the user in the form of a single .exe file to download and use.
 14. Uses CPU threading for doing longer tasks more efficiently, thereby making the program run faster.
-
+15. Makes use of OOP concepts like multitasking, parallel processing, modularity and polymorphism to work efficiently.
 ## Installation
 
 ### _To run the Program executable file_ (not added yet)
