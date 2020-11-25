@@ -12,7 +12,7 @@ It aims to let you downlaod youtube vidoes with ease.
 2. Add statistics button on main screens
 3. Add window management for graphs
 4. Reset and synchronize data files
-
+5. Fix video titles nto showing in playlist page.
 
 ## Features:
 1. Can download any youtube video from the URL
