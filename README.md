@@ -13,6 +13,7 @@ It aims to let you downlaod youtube vidoes with ease.
 3. Add window management for graphs
 4. Reset and synchronize data files
 5. Fix video titles nto showing in playlist page.
+6. Split main.py into smaller files.
 
 ## Features:
 1. Can download any youtube video from the URL
@@ -31,13 +32,22 @@ It aims to let you downlaod youtube vidoes with ease.
 13. Offers Portability to the user in the form of a single .exe file to download and use.
 14. Uses CPU threading for doing longer tasks more efficiently, thereby making the program run faster.
 15. Makes use of OOP concepts like multitasking, parallel processing, modularity and polymorphism to work efficiently.
+
+
+### Dependencies
+ > connection to internet while running program
+
 ## Installation
 
-### _To run the Program executable file_ (not added yet)
-1. Windows  x86
-2. Connection to the Internet
+### _To run the Program executable file (You don't need Python installed to run)_
 
-### _To compile and edit the source code in your own Environment_ *(for collaborators)* :
+1. Click on `tags` on the right hand side of this page under `resources`
+2. Go to the first pre release, and click to expand  `assets`
+3. Download and run the installer `Kappa.V.1.2.exe` on your computer
+4. Select destination folder to install the executable.
+5. Run the `main.exe` file from the folder where you installed the program.
+
+### _To compile and edit the source code in your own Environment_ *(for group)* :
 
 1. _Python 3.7 to 3.9_ as of date of upload
 2. Modules _pytube 9.7_, _pillow_, _requests_, _pandas_, _matplotlib_
@@ -50,7 +60,7 @@ pip install pandas
 pip install matplotlib
 ```
 
-### Using the existing Environment to compile, edit, and view Source code
+### Using the existing Environment to compile, edit, and view Source code (for group)
 
 1. **Pycharm, Thonny** or any text editor that supports addition of Virtual Environments
 2. Download or clone the repository in your computer
