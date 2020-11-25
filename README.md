@@ -7,6 +7,12 @@ IP project made by :
 
 It aims to let you downlaod youtube vidoes with ease.
 
+# Things remaining to do
+1. Add Graphs
+2. Add statistics button on main screens
+3. Add window management for graphs
+4. Reset and synchronize data files
+
 
 ## Features:
 1. Can download any youtube video from the URL
