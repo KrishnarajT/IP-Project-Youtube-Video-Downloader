@@ -7,15 +7,44 @@ IP project made by :
 
 It aims to let you downlaod youtube vidoes with ease.
 
+# How it looks like
+
+## _Intro Page - Entering Video URL_
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(3).png)
+
+## _Showing Video Information_ 
+_ User can click the **download** button to download_
+
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(1).png)
+
+## _Downloaded Video_
+
+_User can click on **One more** to download more videos_
+
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots.png)
+
+## _Downloading a Playlist_
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(2).png)
+
+## _Downloaded and removed videos from the Playlist_
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(4).png)
+
+## _Test Graph comparing video ratings vs videos_
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/26-11-20/graphs%20test%20(1).png)
+
+## _Test Graph comparing video views vs videos_
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/26-11-20/graphs%20test.png)
+
+
 # Things remaining to do
-1. Add Graphs
+1. Add more Graphs
 2. Add statistics button on main screens
 3. Add window management for graphs
 4. Reset and synchronize data files
 5. Fix video titles nto showing in playlist page.
 6. Split main.py into smaller files.
 
-## Features:
+# Features:
 1. Can download any youtube video from the URL
 2. Can download the video in either 720p with 360p with Audio
 3. Can download only the audio from a video.
@@ -34,10 +63,10 @@ It aims to let you downlaod youtube vidoes with ease.
 15. Makes use of OOP concepts like multitasking, parallel processing, modularity and polymorphism to work efficiently.
 
 
-### Dependencies
- > connection to internet while running program
+# Dependencies
+ > Active Connection to internet while running the program
 
-## Installation
+# Installation
 
 ### _To run the Program executable file (You don't need Python installed to run)_
 
@@ -71,11 +100,11 @@ and select that as the interpreter
 5. Run the code.
 
 
-## Limitations
+# Limitations
 1. Can only download video+audio upto 720p
 2. Maximum of 50 videos of a playlist can be downloaded at once
 
-## Working
+# Working
 
 ### Pytube
 
@@ -154,20 +183,6 @@ create graphs. These functions will be written in the `graphs.py` file.
 
 These graphs are then integrated in the `main.py` file that are then displayed as 
 statistics in the program.
-
-
-# How it looks like
-![alt text](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(1).png)
-
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(1).png)
-
-
-
-
-
-
-
-
 
 
 
