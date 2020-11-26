@@ -13,13 +13,13 @@ It aims to let you downlaod youtube vidoes with ease.
 ![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(3).png)
 
 ## _Showing Video Information_ 
-_ User can click the **download** button to download_
+_Users can click the **download** button to download_
 
 ![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(1).png)
 
 ## _Downloaded Video_
 
-_User can click on **One more** to download more videos_
+_Users can click on **One more** to download more videos_
 
 ![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots.png)
 
