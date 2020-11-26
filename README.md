@@ -156,7 +156,10 @@ These graphs are then integrated in the `main.py` file that are then displayed a
 statistics in the program.
 
 
+# How it looks like
+![alt text](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(1).png)
 
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(1).png)
 
 
 
