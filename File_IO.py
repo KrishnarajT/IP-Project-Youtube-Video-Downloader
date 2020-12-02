@@ -1,7 +1,7 @@
 """
 This file is used to define functions that are going to take in a youtube object, and then write the data onto files.
 """
-import pytube as pt
+# import pytube as pt
 
 
 def conv_len( length ) :
@@ -31,6 +31,7 @@ def conv_len( length ) :
             vid_len = str( hours ) + ':' + str( minutes ) + ':' + str( seconds )
         
         return vid_len
+    
 def get_data():
     video = pt.YouTube('https://www.youtube.com/watch?v=8kooIgKESYE')
     # video = pt.YouTube('https://www.youtube.com/watch?v=KRaWnd3LJfs')
