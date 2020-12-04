@@ -1,17 +1,19 @@
 # importing the things
+#import os
+import os
 import tkinter as tk
 import time
 from tkinter import ttk
 import pytube as pt
-import urllib.request
 import requests
-import os
 from tkinter.filedialog import askopenfilename
 from PIL import ImageTk, Image
 import threading
 import Tags
 import re
 import File_IO as fio
+import methods
+#import Graphs
 
 
 # defining Some constants
@@ -28,6 +30,7 @@ REMOVE_IMAGE = "Assets/Background Images/remove.png"
 FILE_SELECT_IMAGE = "Assets/Background Images/FILE SELECT1.png"
 RESTART_IMAGE = 'Assets/Background Images/onemore.png'
 PROCEED_BTN = 'Assets/Background Images/PROCEED BTN.png'
+STATISTICS_BTN = 'Assets/Background Images/STATISTICS BTN.png'
 URL = ''
 FILENAME = os.getcwd()
 maxbytes = 0
@@ -38,52 +41,7 @@ Quality_tag = 142
 filesize = 0
 playlist_URLS = [ ]
 download_list = [ ]
-'''Class to store basic functions that can be used throughout for common purposes'''
 sel_stream = '360p'
-
-class General :
-    
-    # gets the id of the video from the url, this id is used to store the thumbnail of the video later on
-    @staticmethod
-    def get_vid_id( url ) :
-        return url[ url.index( "=" ) + 1 : ]
-    
-    # Gets the video thumbnail and saves it in the correct folder
-    @staticmethod
-    def get_video_tnl( url, tnurl ) :
-        vid_id = General.get_vid_id( url ) + '.png'
-        tnl = urllib.request.urlretrieve( tnurl, os.path.join( 'Assets/Thumbnails', vid_id ) )
-        return tnl
-    
-    # Convers the lengths of the videos from seconds to displayable and understandable formats
-    @staticmethod
-    def conv_len( length ) :
-        print( length )
-        minutes_or_hours = length // 60  # 563
-        if minutes_or_hours < 60 :
-            print( minutes_or_hours )
-            minutes = minutes_or_hours
-            seconds = length - (60 * minutes)
-            if minutes < 10 :
-                vid_len = '00:0' + str( minutes ) + ':' + str( seconds )
-            else :
-                vid_len = '00:0' + str( minutes ) + ':' + str( seconds )
-            return vid_len
-        else :
-            print( minutes_or_hours )
-            hours = minutes_or_hours // 60
-            print( 'hours', hours )
-            minutes = (minutes_or_hours - (60 * hours))
-            our_seconds = hours * 3600 + minutes * 60
-            seconds = length - our_seconds
-            if minutes < 10 and seconds < 10 :
-                vid_len = str( hours ) + ':0' + str( minutes ) + ':0' + str( seconds )
-            elif minutes < 10 and seconds > 10 :
-                vid_len = str( hours ) + ':0' + str( minutes ) + ':' + str( seconds )
-            else :
-                vid_len = str( hours ) + ':' + str( minutes ) + ':' + str( seconds )
-            
-            return vid_len
 
 '''Class that has functions for displaying windows and doing all the work in the program'''
 
@@ -115,7 +73,10 @@ class window :
                     TYPE = 'SINGLE'
                 print( 'this shit is the url', user_url )
                 URL = user_url
-        
+        # runs if you pressed the statistics button, redirects you to the statistics page.
+        def statistics() :
+            global TYPE
+            TYPE = 'STATISTICS'
         # Beginning loop from here
         root = tk.Tk()
         canvas = tk.Canvas( root, height = HEIGHT, width = WIDTH )
@@ -134,10 +95,21 @@ class window :
         proceed_img = proceed_img.resize( (141, 43), Image.ANTIALIAS )
         proceed_img = ImageTk.PhotoImage( proceed_img )
         
+        
+        
+        statistics_img = Image.open( STATISTICS_BTN )
+        statistics_img = statistics_img.resize( (141, 43), Image.ANTIALIAS )
+        statistics_img = ImageTk.PhotoImage( statistics_img )
+        
         # placing the proceed button, that calls the proceed function
         proceed_btn = tk.Button( canvas, image = proceed_img, command = lambda : [ proceed(), root.destroy() ],
                                  bg = '#64A8E8', border = 0, activebackground = '#64A8E8' )
-        proceed_btn.place( rely = 0.9, relx = 0.45 )
+        proceed_btn.place( rely = 0.9, relx = 0.38 )
+        
+        # placing the Statistics button, that calls the Statistics window
+        statistics_btn = tk.Button( canvas, image = statistics_img, command = lambda : [ statistics(), root.destroy() ],
+                                 bg = '#64A8E8', border = 0, activebackground = '#64A8E8' )
+        statistics_btn.place( rely = 0.9, relx = 0.51 )
         
         root.mainloop()
     
@@ -237,9 +209,9 @@ class window :
         BG_IMG_LABEL.place( relwidth = 1, relheight = 1 )
         
         # scrapping the thumbnail from the current video and putting it in some folder
-        General.get_video_tnl( url, tnurl )
+        methods.get_video_tnl( url, tnurl )
         
-        img = Image.open( os.path.join( 'Assets/Thumbnails', General.get_vid_id( url ) + '.png' ) )
+        img = Image.open( os.path.join( 'Assets/Thumbnails', methods.get_vid_id( url ) + '.png' ) )
         img = img.resize( (283, 160), Image.ANTIALIAS )
         img = ImageTk.PhotoImage( img )
         
@@ -253,7 +225,7 @@ class window :
         vid_title.place( rely = 0.2, relx = 0.25 )
         
         # displaying the length of the video
-        vid_len = General.conv_len( length )
+        vid_len = methods.conv_len( length )
         vid_length = tk.Label( canvas, text = vid_len, anchor = 'w', font = (
             "Calibre", 18), bg = 'white', wraplength = 400 )
         vid_length.place( rely = 0.38, relx = 0.25 )
@@ -299,7 +271,7 @@ class window :
         root.mainloop()
     
     @staticmethod
-    def sel_downlaod_win_playlist( url, playlist_obj ) :
+    def sel_downlaod_win_playlist( playlist_obj ) :
         
         global download_list, videos
         """
@@ -359,14 +331,14 @@ class window :
                 video_type = vid.streams.get_by_itag(
                         list( Tags.tags.keys() )[ list( Tags.tags.values() ).index( sel_stream ) ] )
                 
-                General.get_video_tnl( vid.watch_url, vid.thumbnail_url )
+                methods.get_video_tnl( vid.watch_url, vid.thumbnail_url )
                 img1 = Image.open( os.path.join( 'Assets/Thumbnails',
-                                                 General.get_vid_id( vid.watch_url ) + '.png' ) )
+                                                 methods.get_vid_id( vid.watch_url ) + '.png' ) )
                 img1 = img1.resize( (283, 160), Image.ANTIALIAS )
                 img1 = ImageTk.PhotoImage( img1 )
                 
                 cur_vid_length = vid.length
-                vid_len1 = General.conv_len( cur_vid_length )
+                vid_len1 = methods.conv_len( cur_vid_length )
                 cur_vid_title = vid.title
                 
                 vid_title.config( text = cur_vid_title )
@@ -440,11 +412,11 @@ class window :
         BG_IMG_LABEL.place( relwidth = 1, relheight = 1 )
         
         # scrapping the thumbnail from the current video and putting it in some folder
-        General.get_video_tnl( video_obj.watch_url, tnurl )
+        methods.get_video_tnl( video_obj.watch_url, tnurl )
         
         # creating the image object for the thumbnails
         img = Image.open( os.path.join( 'Assets/Thumbnails',
-                                        General.get_vid_id( video_obj.watch_url ) + '.png' ) )
+                                        methods.get_vid_id( video_obj.watch_url ) + '.png' ) )
         img = img.resize( (283, 160), Image.ANTIALIAS )
         img = ImageTk.PhotoImage( img )
         
@@ -458,7 +430,7 @@ class window :
         vid_title.place( rely = 0.2, relx = 0.25 )
         
         # displaying the length of the video
-        vid_len = General.conv_len( cur_video_length )
+        vid_len = methods.conv_len( cur_video_length )
         vid_length = tk.Label( canvas, text = vid_len, anchor = 'w', font = (
             "Calibre", 18), bg = 'white', wraplength = 400 )
         vid_length.place( rely = 0.38, relx = 0.25 )
@@ -539,6 +511,55 @@ class window :
         next_btn.place( rely = 0.01, relx = 0.9 )
         root.mainloop()
 
+    @staticmethod
+    def statistics():
+        root = tk.Tk()
+        root.geometry( "1280x720" )
+    
+        # Create A Main Frame
+        main_frame = tk.Frame( root )
+        main_frame.pack( fill = tk.BOTH, expand = 1 )
+    
+        # Create A Canvas
+        my_canvas = tk.Canvas( main_frame )
+        my_canvas.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
+    
+        # Add A Scrollbar To The Canvas
+        my_scrollbar = ttk.Scrollbar( main_frame, orient = tk.VERTICAL, command = my_canvas.yview )
+        my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
+    
+        # Configure The Canvas
+        my_canvas.configure( yscrollcommand = my_scrollbar.set )
+        my_canvas.bind( '<Configure>', lambda e : my_canvas.configure( scrollregion = my_canvas.bbox( "all" ) ) )
+    
+        # Create ANOTHER Frame INSIDE the Canvas
+        second_frame = tk.Frame( my_canvas )
+    
+        # quits the window, after changing some global variables
+        def restart() :
+            global again
+            again = True
+            root.destroy()
+            pass
+        dnimg = Image.open( RESTART_IMAGE )
+        dnimg = dnimg.resize( (125, 125), Image.ANTIALIAS )
+        dnimg = ImageTk.PhotoImage( dnimg )
+        
+        # Add that New frame To a Window In The Canvas
+        my_canvas.create_window( (0, 0), window = second_frame, anchor = "nw" )
+        
+        
+        next_btn = tk.Button( second_frame, image = dnimg, command = restart, font = ("Calibre", 16),
+                              bg = '#8CB0FF', border = 0,activebackground = '#8CB0FF' )
+        next_btn.place( rely = 0.01, relx = 0.9 )
+        #next_btn.grid(row = 1, column = 0, pady = 10, padx = 10)
+
+        
+        #for thing in range( 10 ) :
+         #   tk.Button( second_frame, text = f'Button {thing} Yo!' ).grid( row = thing, column = 0, pady = 10, padx = 10 )
+        
+        root.mainloop()
+        
 def generate_vids() :
     j = 0
     for i in playlist_URLS :
@@ -564,14 +585,16 @@ def main() :
             yt = pt.YouTube( URL )
             fio.write.add_to_data( yt )
             window.sel_download_win_single( URL, yt )
-        else :
+        elif TYPE == 'PLAYLIST':
             playlist = pt.Playlist( URL )
             playlist._video_regex = re.compile( r"\"url\":\"(/watch\?v=[\w-]*)" )
             playlist_URLS = playlist.video_urls
             T1 = threading.Thread( target = generate_vids )
             T1.start()
             time.sleep( 4 )
-            window.sel_downlaod_win_playlist( URL, playlist )
+            window.sel_downlaod_win_playlist( playlist )
+        elif TYPE == 'STATISTICS':
+            window.statistics()
     
     if not again :
         print( 'Thanks for using Kappa video downloader' )
@@ -640,42 +663,5 @@ main()
 
 
 '''
-This is how to add a scrollbar to your entire canvas in tkinter, just for future reference use
-from tkinter import *
-from tkinter import ttk
 
-root = Tk()
-root.title('Learn To Code at Codemy.com')
-root.iconbitmap('c:/gui/codemy.ico')
-root.geometry("500x400")
-
-# Create A Main Frame
-main_frame = Frame(root)
-main_frame.pack(fill=BOTH, expand=1)
-
-# Create A Canvas
-my_canvas = Canvas(main_frame)
-my_canvas.pack(side=LEFT, fill=BOTH, expand=1)
-
-# Add A Scrollbar To The Canvas
-my_scrollbar = ttk.Scrollbar(main_frame, orient=VERTICAL, command=my_canvas.yview)
-my_scrollbar.pack(side=RIGHT, fill=Y)
-
-# Configure The Canvas
-my_canvas.configure(yscrollcommand=my_scrollbar.set)
-my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
-
-# Create ANOTHER Frame INSIDE the Canvas
-second_frame = Frame(my_canvas)
-
-# Add that New frame To a Window In The Canvas
-my_canvas.create_window((0,0), window=second_frame, anchor="nw")
-
-for thing in range(100):
-	Button(second_frame, text=f'Button {thing} Yo!').grid(row=thing, column=0, pady=10, padx=10)
-
-my_label = Label(second_frame, text="It's Friday Yo!").grid(row=3, column=2)
-
-
-root.mainloop()
 '''
