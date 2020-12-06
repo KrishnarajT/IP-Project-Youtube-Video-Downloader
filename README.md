@@ -30,10 +30,10 @@ _Users can click on **One more** to download more videos_
 ![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(4).png)
 
 ## _Test Graph comparing video ratings vs videos_
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/26-11-20/graphs%20test%20(1).png)
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/06-12-20/Added%Tabs%and%Graphs.png)
 
 ## _Test Graph comparing video views vs videos_
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/26-11-20/graphs%20test.png)
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/06-12-20/Added%Tabs%and%Graphs%2.png)
 
 
 # Things remaining to do

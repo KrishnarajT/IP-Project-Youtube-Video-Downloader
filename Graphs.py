@@ -26,7 +26,7 @@ def plot_views_vs_videos():
 	views_list[0] = 2346 # random value here
 
 	# plots a simple graph that is saved as png in Assets/Graphs/. This file can then be accessed by other files.
-	plt.bar(np.arange(len(views_list)), views_list)
+	plt.bar(np.arange(len(views_list)), views_list, color = 'green')
 	plt.savefig('Assets/Graphs/views_bar_graph.png')
 			
 
@@ -52,7 +52,8 @@ def plot_ratings_vs_videos():
 	views_list[0] = 2.346 # random value here
 
 	# plots a simple graph that is saved as png in Assets/Graphs/. This file can then be accessed by other files.
-	plt.bar(np.arange(len(views_list)), views_list)
+	plt.plot(np.arange(len(views_list)), views_list, color = 'red')
 	plt.savefig('Assets/Graphs/ratings_bar_graph.png')
 	
-	
+# plot_ratings_vs_videos()
+# plot_views_vs_videos()

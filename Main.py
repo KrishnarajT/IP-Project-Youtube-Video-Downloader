@@ -519,54 +519,132 @@ class window :
         root = tk.Tk()
         root.geometry( "1280x720" )
         
+        
+        # Creating the notebook, that enables tabs
         my_notebook = ttk.Notebook( root )
         my_notebook.pack()
-            
-        my_frame1 = tk.Frame( my_notebook, width = 1280, height = 720, bg = "white" )
         
-        my_canvas = tk.Canvas( my_frame1, width = 1250, height = 720 )
-        my_canvas.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
+        # _____________Views Tab_________________#
         
-        my_scrollbar = ttk.Scrollbar( my_frame1, orient = tk.VERTICAL, command = my_canvas.yview )
+        base_frame_tab_1 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
+        
+        # Adding a scrollbar to that tab
+        base_canvas_tab_1 = tk.Canvas( base_frame_tab_1, width = 1250, height = 5000 )
+        base_canvas_tab_1.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
+        my_scrollbar = ttk.Scrollbar( base_frame_tab_1, orient = tk.VERTICAL, command = base_canvas_tab_1.yview )
         my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
+        base_canvas_tab_1.configure( yscrollcommand = my_scrollbar.set )
+        base_canvas_tab_1.bind( '<Configure>', lambda e : base_canvas_tab_1.configure( scrollregion = base_canvas_tab_1.bbox( "all" ) ) )
+        tab_frame_1 = tk.Frame( base_canvas_tab_1, width = 1280, height = 5000, bg = "#65A8E8" )
+        base_canvas_tab_1.create_window( (0, 0), window = tab_frame_1, anchor = "nw" )
+
+        #____Stuff in the tab___#
         
-        my_canvas.configure( yscrollcommand = my_scrollbar.set )
-        my_canvas.bind( '<Configure>', lambda e : my_canvas.configure( scrollregion = my_canvas.bbox( "all" ) ) )
+        bg_label_1 = tk.Label(tab_frame_1, text = 'Views Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30))
+        bg_label_1.place(relx = 0.3, rely = 0.01)
+        views_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/views_bar_graph.png' ) )
+        views_graph_img_lbl = tk.Label( tab_frame_1, image = views_graph_img )
+        views_graph_img_lbl.place(relx = 0.25, rely = 0.03)
+
+        #___#
         
-        second_frame1 = tk.Frame( my_canvas, width = 1280, height = 720, bg = "white" )
+        # _______________Ratings Tab__________________#
         
-        my_canvas.create_window( (0, 0), window = second_frame1, anchor = "nw" )
-        
-        my_frame2 = tk.Frame( my_notebook, width = 1280, height = 720, bg = "white" )
-        
-        my_canvas2 = tk.Canvas( my_frame2, width = 1250, height = 720 )
-        my_canvas2.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
-        
-        my_scrollbar = ttk.Scrollbar( my_frame2, orient = tk.VERTICAL, command = my_canvas2.yview )
-        my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
-        
-        my_canvas2.configure( yscrollcommand = my_scrollbar.set )
-        my_canvas2.bind( '<Configure>', lambda e : my_canvas2.configure( scrollregion = my_canvas2.bbox( "all" ) ) )
-        
-        second_frame2 = tk.Frame( my_canvas2, width = 1280, height = 720, bg = "white" )
-        
-        my_canvas2.create_window( (0, 0), window = second_frame2, anchor = "nw" )
-        
-        my_frame1.pack( fill = "both", expand = 1 )
-        my_frame2.pack( fill = "both", expand = 1 )
-        
-        my_notebook.add( my_frame1, text = "views" )
-        my_notebook.add( my_frame2, text = "ratings" )
+        base_frame_tab_2 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
     
+        # Adding scrollbar to that tab
+        base_canvas_tab_2 = tk.Canvas( base_frame_tab_2, width = 1250, height = 5000 )
+        base_canvas_tab_2.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
+        my_scrollbar = ttk.Scrollbar( base_frame_tab_2, orient = tk.VERTICAL, command = base_canvas_tab_2.yview )
+        my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
+        base_canvas_tab_2.configure( yscrollcommand = my_scrollbar.set )
+        base_canvas_tab_2.bind( '<Configure>', lambda e : base_canvas_tab_2.configure( scrollregion = base_canvas_tab_2.bbox( "all" ) ) )
+        tab_frame_2 = tk.Frame( base_canvas_tab_2, width = 1280, height = 5000, bg = "#65A8E8" )
+        base_canvas_tab_2.create_window( (0, 0), window = tab_frame_2, anchor = "nw" )
+
+        # ____Stuff in the tab___#
         
-        views_graph_img = ImageTk.PhotoImage(Image.open('Assets/Graphs/views_bar_graph.png'))
-        views_graph_img_lbl = tk.Label(second_frame1, image = views_graph_img)
-        views_graph_img_lbl.grid(row =0, column = 0, padx = 100, pady = 50)
+        bg_label_2 = tk.Label(tab_frame_2, text = 'Ratings Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30))
+        bg_label_2.place(relx = 0.3, rely = 0.01)
+        ratings_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/ratings_bar_graph.png' ) )
+        ratings_graph_img_lbl = tk.Label( tab_frame_2, image = ratings_graph_img )
+        ratings_graph_img_lbl.place(relx = 0.25, rely = 0.03)
+
+        # ___#
+
+
+        # _______________Tab 3__________________#
         
-        ratings_graph_img = ImageTk.PhotoImage(Image.open('Assets/Graphs/ratings_bar_graph.png'))
-        ratings_graph_img_lbl = tk.Label(second_frame2, image = ratings_graph_img)
-        ratings_graph_img_lbl.grid(row =0, column = 0, padx = 100, pady = 50)
+        base_frame_tab_3 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
+    
+        # Adding scrollbar to that tab
+        base_canvas_tab_3 = tk.Canvas( base_frame_tab_3, width = 1250, height = 5000 )
+        base_canvas_tab_3.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
+        my_scrollbar = ttk.Scrollbar( base_frame_tab_3, orient = tk.VERTICAL, command = base_canvas_tab_3.yview )
+        my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
+        base_canvas_tab_3.configure( yscrollcommand = my_scrollbar.set )
+        base_canvas_tab_3.bind( '<Configure>', lambda e : base_canvas_tab_3.configure( scrollregion = base_canvas_tab_3.bbox( "all" ) ) )
+        tab_frame_3 = tk.Frame( base_canvas_tab_3, width = 1280, height = 5000, bg = "#65A8E8" )
+        base_canvas_tab_3.create_window( (0, 0), window = tab_frame_3, anchor = "nw" )
+
+        # ____Stuff in the tab___#
+
+        # ___#
+
+
+        # _______________Tab 4__________________#
         
+        base_frame_tab_4 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
+    
+        # Adding scrollbar to that tab
+        base_canvas_tab_4 = tk.Canvas( base_frame_tab_4, width = 1250, height = 5000 )
+        base_canvas_tab_4.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
+        my_scrollbar = ttk.Scrollbar( base_frame_tab_4, orient = tk.VERTICAL, command = base_canvas_tab_4.yview )
+        my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
+        base_canvas_tab_4.configure( yscrollcommand = my_scrollbar.set )
+        base_canvas_tab_4.bind( '<Configure>', lambda e : base_canvas_tab_4.configure( scrollregion = base_canvas_tab_4.bbox( "all" ) ) )
+        tab_frame_4 = tk.Frame( base_canvas_tab_4, width = 1280, height = 5000, bg = "#65A8E8" )
+        base_canvas_tab_4.create_window( (0, 0), window = tab_frame_4, anchor = "nw" )
+
+        # ____Stuff in the tab___#
+
+        # ___#
+
+
+        # _______________Tab 5__________________#
+
+        base_frame_tab_5 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
+    
+        # Adding scrollbar to that tab
+        base_canvas_tab_5 = tk.Canvas( base_frame_tab_5, width = 1250, height = 5000 )
+        base_canvas_tab_5.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
+        my_scrollbar = ttk.Scrollbar( base_frame_tab_5, orient = tk.VERTICAL, command = base_canvas_tab_5.yview )
+        my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
+        base_canvas_tab_5.configure( yscrollcommand = my_scrollbar.set )
+        base_canvas_tab_5.bind( '<Configure>', lambda e : base_canvas_tab_5.configure( scrollregion = base_canvas_tab_5.bbox( "all" ) ) )
+        tab_frame_5 = tk.Frame( base_canvas_tab_5, width = 1280, height = 5000, bg = "#65A8E8" )
+        base_canvas_tab_5.create_window( (0, 0), window = tab_frame_5, anchor = "nw" )
+
+        # ____Stuff in the tab___#
+
+        # ___#
+
+
+        #____________End of declaring Tabs_____________#
+        #___________Adding them to the notebook, and activating them_________#
+        
+        base_frame_tab_1.pack( fill = "both", expand = 1 )
+        base_frame_tab_2.pack( fill = "both", expand = 1 )
+        base_frame_tab_3.pack( fill = "both", expand = 1 )
+        base_frame_tab_4.pack( fill = "both", expand = 1 )
+        base_frame_tab_5.pack( fill = "both", expand = 1 )
+        
+        my_notebook.add( base_frame_tab_1, text = "views" )
+        my_notebook.add( base_frame_tab_2, text = "ratings" )
+        my_notebook.add( base_frame_tab_3, text = "tab3" )
+        my_notebook.add( base_frame_tab_4, text = "tab4" )
+        my_notebook.add( base_frame_tab_5, text = "tab5" )
+
         root.mainloop()
 
 def generate_vids() :
@@ -587,6 +665,8 @@ def generate_vids() :
 def main() :
     global again, playlist_URLS
     while again :
+        #Graphs.plot_ratings_vs_videos()
+        #Graphs.plot_views_vs_videos()
         again = False
         window.intro_win()  # gets the URL
         if TYPE == 'SINGLE' :
