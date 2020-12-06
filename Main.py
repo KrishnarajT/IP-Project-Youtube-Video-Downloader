@@ -1,7 +1,8 @@
 # importing the things
-#import os
+# import os
 import os
 import tkinter as tk
+from tkinter import messagebox
 import time
 from tkinter import ttk
 import pytube as pt
@@ -13,7 +14,7 @@ import Tags
 import re
 import File_IO as fio
 import methods
-#import Graphs
+import Graphs
 
 
 # defining Some constants
@@ -73,17 +74,19 @@ class window :
                     TYPE = 'SINGLE'
                 print( 'this shit is the url', user_url )
                 URL = user_url
+        
         # runs if you pressed the statistics button, redirects you to the statistics page.
         def statistics() :
             global TYPE
             TYPE = 'STATISTICS'
+        
         # Beginning loop from here
         root = tk.Tk()
         canvas = tk.Canvas( root, height = HEIGHT, width = WIDTH )
         canvas.pack()
         
         # Placing the background image in the canvas
-        BG_IMG = tk.PhotoImage( file = INTRO_BGIMG )
+        BG_IMG = tk.PhotoImage( file = INTRO_BGIMG, master = root )
         BG_IMG_LABEL = tk.Label( canvas, image = BG_IMG )
         BG_IMG_LABEL.place( relwidth = 1, relheight = 1 )
         
@@ -94,8 +97,6 @@ class window :
         proceed_img = Image.open( PROCEED_BTN )
         proceed_img = proceed_img.resize( (141, 43), Image.ANTIALIAS )
         proceed_img = ImageTk.PhotoImage( proceed_img )
-        
-        
         
         statistics_img = Image.open( STATISTICS_BTN )
         statistics_img = statistics_img.resize( (141, 43), Image.ANTIALIAS )
@@ -108,7 +109,7 @@ class window :
         
         # placing the Statistics button, that calls the Statistics window
         statistics_btn = tk.Button( canvas, image = statistics_img, command = lambda : [ statistics(), root.destroy() ],
-                                 bg = '#64A8E8', border = 0, activebackground = '#64A8E8' )
+                                    bg = '#64A8E8', border = 0, activebackground = '#64A8E8' )
         statistics_btn.place( rely = 0.9, relx = 0.51 )
         
         root.mainloop()
@@ -510,60 +511,68 @@ class window :
                               activebackground = '#8CB0FF' )
         next_btn.place( rely = 0.01, relx = 0.9 )
         root.mainloop()
-
+        
+    
     @staticmethod
-    def statistics():
+    def statistics() :
+
         root = tk.Tk()
         root.geometry( "1280x720" )
-    
-        # Create A Main Frame
-        main_frame = tk.Frame( root )
-        main_frame.pack( fill = tk.BOTH, expand = 1 )
-    
-        # Create A Canvas
-        my_canvas = tk.Canvas( main_frame )
+        
+        my_notebook = ttk.Notebook( root )
+        my_notebook.pack()
+            
+        my_frame1 = tk.Frame( my_notebook, width = 1280, height = 720, bg = "white" )
+        
+        my_canvas = tk.Canvas( my_frame1, width = 1250, height = 720 )
         my_canvas.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
-    
-        # Add A Scrollbar To The Canvas
-        my_scrollbar = ttk.Scrollbar( main_frame, orient = tk.VERTICAL, command = my_canvas.yview )
+        
+        my_scrollbar = ttk.Scrollbar( my_frame1, orient = tk.VERTICAL, command = my_canvas.yview )
         my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
-    
-        # Configure The Canvas
+        
         my_canvas.configure( yscrollcommand = my_scrollbar.set )
         my_canvas.bind( '<Configure>', lambda e : my_canvas.configure( scrollregion = my_canvas.bbox( "all" ) ) )
+        
+        second_frame1 = tk.Frame( my_canvas, width = 1280, height = 720, bg = "white" )
+        
+        my_canvas.create_window( (0, 0), window = second_frame1, anchor = "nw" )
+        
+        my_frame2 = tk.Frame( my_notebook, width = 1280, height = 720, bg = "white" )
+        
+        my_canvas2 = tk.Canvas( my_frame2, width = 1250, height = 720 )
+        my_canvas2.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
+        
+        my_scrollbar = ttk.Scrollbar( my_frame2, orient = tk.VERTICAL, command = my_canvas2.yview )
+        my_scrollbar.pack( side = tk.RIGHT, fill = tk.Y )
+        
+        my_canvas2.configure( yscrollcommand = my_scrollbar.set )
+        my_canvas2.bind( '<Configure>', lambda e : my_canvas2.configure( scrollregion = my_canvas2.bbox( "all" ) ) )
+        
+        second_frame2 = tk.Frame( my_canvas2, width = 1280, height = 720, bg = "white" )
+        
+        my_canvas2.create_window( (0, 0), window = second_frame2, anchor = "nw" )
+        
+        my_frame1.pack( fill = "both", expand = 1 )
+        my_frame2.pack( fill = "both", expand = 1 )
+        
+        my_notebook.add( my_frame1, text = "views" )
+        my_notebook.add( my_frame2, text = "ratings" )
     
-        # Create ANOTHER Frame INSIDE the Canvas
-        second_frame = tk.Frame( my_canvas )
-    
-        # quits the window, after changing some global variables
-        def restart() :
-            global again
-            again = True
-            root.destroy()
-            pass
-        dnimg = Image.open( RESTART_IMAGE )
-        dnimg = dnimg.resize( (125, 125), Image.ANTIALIAS )
-        dnimg = ImageTk.PhotoImage( dnimg )
         
-        # Add that New frame To a Window In The Canvas
-        my_canvas.create_window( (0, 0), window = second_frame, anchor = "nw" )
+        views_graph_img = ImageTk.PhotoImage(Image.open('Assets/Graphs/views_bar_graph.png'))
+        views_graph_img_lbl = tk.Label(second_frame1, image = views_graph_img)
+        views_graph_img_lbl.grid(row =0, column = 0, padx = 100, pady = 50)
         
-        
-        next_btn = tk.Button( second_frame, image = dnimg, command = restart, font = ("Calibre", 16),
-                              bg = '#8CB0FF', border = 0,activebackground = '#8CB0FF' )
-        next_btn.place( rely = 0.01, relx = 0.9 )
-        #next_btn.grid(row = 1, column = 0, pady = 10, padx = 10)
-
-        
-        #for thing in range( 10 ) :
-         #   tk.Button( second_frame, text = f'Button {thing} Yo!' ).grid( row = thing, column = 0, pady = 10, padx = 10 )
+        ratings_graph_img = ImageTk.PhotoImage(Image.open('Assets/Graphs/ratings_bar_graph.png'))
+        ratings_graph_img_lbl = tk.Label(second_frame2, image = ratings_graph_img)
+        ratings_graph_img_lbl.grid(row =0, column = 0, padx = 100, pady = 50)
         
         root.mainloop()
-        
+
 def generate_vids() :
     j = 0
     for i in playlist_URLS :
-        try:
+        try :
             videos.append( pt.YouTube( i ) )
             print( i )
             print( 'appended' )
@@ -571,7 +580,7 @@ def generate_vids() :
             j += 1
             print( 'added' )
         except :
-            print('sht')
+            print( 'sht' )
             continue
 
 # Function to run all the things. Function to return to. Function that calls. Function that manages.
@@ -585,7 +594,7 @@ def main() :
             yt = pt.YouTube( URL )
             fio.write.add_to_data( yt )
             window.sel_download_win_single( URL, yt )
-        elif TYPE == 'PLAYLIST':
+        elif TYPE == 'PLAYLIST' :
             playlist = pt.Playlist( URL )
             playlist._video_regex = re.compile( r"\"url\":\"(/watch\?v=[\w-]*)" )
             playlist_URLS = playlist.video_urls
@@ -593,75 +602,10 @@ def main() :
             T1.start()
             time.sleep( 4 )
             window.sel_downlaod_win_playlist( playlist )
-        elif TYPE == 'STATISTICS':
+        elif TYPE == 'STATISTICS' :
             window.statistics()
     
     if not again :
         print( 'Thanks for using Kappa video downloader' )
 
 main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-
-'''
