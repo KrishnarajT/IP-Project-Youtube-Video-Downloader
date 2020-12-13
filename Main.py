@@ -2,12 +2,13 @@
 # import os
 import os
 import tkinter as tk
-from tkinter import messagebox
 import time
 from tkinter import ttk
 import pytube as pt
 import requests
 from tkinter.filedialog import askopenfilename
+
+import youtube_dl
 from PIL import ImageTk, Image
 import threading
 import Tags
@@ -37,7 +38,10 @@ FILENAME = os.getcwd()
 maxbytes = 0
 sth = 1
 again = True
-videos = [ ]
+done = False
+video_titles = []
+like_counts = []
+dislike_counts = []
 Quality_tag = 142
 filesize = 0
 playlist_URLS = [ ]
@@ -114,6 +118,7 @@ class window :
         
         root.mainloop()
     
+    # This is the backup
     @staticmethod  # this thing works tho...
     def sel_download_win_single( url, video_obj ) :
         """
@@ -274,13 +279,13 @@ class window :
     @staticmethod
     def sel_downlaod_win_playlist( playlist_obj ) :
         
-        global download_list, videos
+        global download_list
         """
         this window shows you the thumbnail of the video along with its title and available qualities, also shows you the
         download button and the file path selection menu. You click download and the video downloades.
         """
         download_list = playlist_obj.video_urls
-        video_obj = videos[ 0 ]
+        video_obj = pt.YouTube(download_list[0])
         total_vids = len( playlist_obj.video_urls )
         
         tnurl = video_obj.thumbnail_url
@@ -468,7 +473,7 @@ class window :
         # displaying the listbox
         all_videos = tk.Listbox( canvas, yscrollcommand = scrollbar.set, width = 70, font = ("Calibre", 16, 'italic'), height = 7,
                                  selectmode = tk.EXTENDED )
-        for video in download_list :
+        for video in video_titles :
             all_videos.insert( tk.END, video )
         all_videos.place( rely = 0.533, relx = 0.02 )
         scrollbar.config( command = all_videos.yview )
@@ -511,14 +516,12 @@ class window :
                               activebackground = '#8CB0FF' )
         next_btn.place( rely = 0.01, relx = 0.9 )
         root.mainloop()
-        
     
     @staticmethod
     def statistics() :
-
+        
         root = tk.Tk()
         root.geometry( "1280x720" )
-        
         
         # Creating the notebook, that enables tabs
         my_notebook = ttk.Notebook( root )
@@ -537,21 +540,21 @@ class window :
         base_canvas_tab_1.bind( '<Configure>', lambda e : base_canvas_tab_1.configure( scrollregion = base_canvas_tab_1.bbox( "all" ) ) )
         tab_frame_1 = tk.Frame( base_canvas_tab_1, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_1.create_window( (0, 0), window = tab_frame_1, anchor = "nw" )
-
-        #____Stuff in the tab___#
         
-        bg_label_1 = tk.Label(tab_frame_1, text = 'Views Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30))
-        bg_label_1.place(relx = 0.3, rely = 0.01)
+        # ____Stuff in the tab___#
+        
+        bg_label_1 = tk.Label( tab_frame_1, text = 'Views Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
+        bg_label_1.place( relx = 0.3, rely = 0.01 )
         views_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/views_bar_graph.png' ) )
         views_graph_img_lbl = tk.Label( tab_frame_1, image = views_graph_img )
-        views_graph_img_lbl.place(relx = 0.25, rely = 0.03)
-
-        #___#
+        views_graph_img_lbl.place( relx = 0.25, rely = 0.03 )
+        
+        # ___#
         
         # _______________Ratings Tab__________________#
         
         base_frame_tab_2 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-    
+        
         # Adding scrollbar to that tab
         base_canvas_tab_2 = tk.Canvas( base_frame_tab_2, width = 1250, height = 5000 )
         base_canvas_tab_2.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -561,22 +564,21 @@ class window :
         base_canvas_tab_2.bind( '<Configure>', lambda e : base_canvas_tab_2.configure( scrollregion = base_canvas_tab_2.bbox( "all" ) ) )
         tab_frame_2 = tk.Frame( base_canvas_tab_2, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_2.create_window( (0, 0), window = tab_frame_2, anchor = "nw" )
-
+        
         # ____Stuff in the tab___#
         
-        bg_label_2 = tk.Label(tab_frame_2, text = 'Ratings Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30))
-        bg_label_2.place(relx = 0.3, rely = 0.01)
+        bg_label_2 = tk.Label( tab_frame_2, text = 'Ratings Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
+        bg_label_2.place( relx = 0.3, rely = 0.01 )
         ratings_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/ratings_bar_graph.png' ) )
         ratings_graph_img_lbl = tk.Label( tab_frame_2, image = ratings_graph_img )
-        ratings_graph_img_lbl.place(relx = 0.25, rely = 0.03)
-
+        ratings_graph_img_lbl.place( relx = 0.25, rely = 0.03 )
+        
         # ___#
-
-
+        
         # _______________Tab 3__________________#
         
         base_frame_tab_3 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-    
+        
         # Adding scrollbar to that tab
         base_canvas_tab_3 = tk.Canvas( base_frame_tab_3, width = 1250, height = 5000 )
         base_canvas_tab_3.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -586,16 +588,15 @@ class window :
         base_canvas_tab_3.bind( '<Configure>', lambda e : base_canvas_tab_3.configure( scrollregion = base_canvas_tab_3.bbox( "all" ) ) )
         tab_frame_3 = tk.Frame( base_canvas_tab_3, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_3.create_window( (0, 0), window = tab_frame_3, anchor = "nw" )
-
+        
         # ____Stuff in the tab___#
-
+        
         # ___#
-
-
+        
         # _______________Tab 4__________________#
         
         base_frame_tab_4 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-    
+        
         # Adding scrollbar to that tab
         base_canvas_tab_4 = tk.Canvas( base_frame_tab_4, width = 1250, height = 5000 )
         base_canvas_tab_4.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -605,16 +606,15 @@ class window :
         base_canvas_tab_4.bind( '<Configure>', lambda e : base_canvas_tab_4.configure( scrollregion = base_canvas_tab_4.bbox( "all" ) ) )
         tab_frame_4 = tk.Frame( base_canvas_tab_4, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_4.create_window( (0, 0), window = tab_frame_4, anchor = "nw" )
-
+        
         # ____Stuff in the tab___#
-
+        
         # ___#
-
-
+        
         # _______________Tab 5__________________#
-
+        
         base_frame_tab_5 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-    
+        
         # Adding scrollbar to that tab
         base_canvas_tab_5 = tk.Canvas( base_frame_tab_5, width = 1250, height = 5000 )
         base_canvas_tab_5.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -624,14 +624,13 @@ class window :
         base_canvas_tab_5.bind( '<Configure>', lambda e : base_canvas_tab_5.configure( scrollregion = base_canvas_tab_5.bbox( "all" ) ) )
         tab_frame_5 = tk.Frame( base_canvas_tab_5, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_5.create_window( (0, 0), window = tab_frame_5, anchor = "nw" )
-
+        
         # ____Stuff in the tab___#
-
+        
         # ___#
-
-
-        #____________End of declaring Tabs_____________#
-        #___________Adding them to the notebook, and activating them_________#
+        
+        # ____________End of declaring Tabs_____________#
+        # ___________Adding them to the notebook, and activating them_________#
         
         base_frame_tab_1.pack( fill = "both", expand = 1 )
         base_frame_tab_2.pack( fill = "both", expand = 1 )
@@ -644,29 +643,70 @@ class window :
         my_notebook.add( base_frame_tab_3, text = "tab3" )
         my_notebook.add( base_frame_tab_4, text = "tab4" )
         my_notebook.add( base_frame_tab_5, text = "tab5" )
-
+        
         root.mainloop()
 
+class loading(tk.Tk):
+    
+    def __init__(self, *args, **kwargs):
+        tk.Tk.__init__(self, *args, **kwargs)
+        self.geometry('445x245')
+        BG_IMG = "Assets/Background Images/metadata_img.png"
+        self.imgg = tk.PhotoImage( file = BG_IMG, master = self )
+        self.label = tk.Label( self, image = self.imgg )
+        self.label.place(relx = -0.01, rely = -0.01)
+        self.progress = ttk.Progressbar(self, orient="horizontal",
+                                        length=450 , mode="determinate", style="TProgressbar")
+        self.progress.place(rely = 0.65, relx = -0.01, relheight = 0.08)
+        self.bytes = 0
+        self.maxbytes = 0
+        self.start()
+    
+    def start(self):
+        self.progress["value"] = 0
+        self.maxbytes = int(1.5*len(playlist_URLS))
+        self.progress["maximum"] = int(1.5*len(playlist_URLS))
+        self.read_bytes()
+    
+    def read_bytes(self):
+        '''simulate reading 500 bytes; update progress bar'''
+        self.bytes += 0.1
+        self.progress["value"] = self.bytes
+        if self.bytes < self.maxbytes:
+            # read more bytes after 100 ms
+            self.after(100, self.read_bytes)
+            if done:
+                self.destroy()
+        else:
+            while True:
+                if done:
+                    self.destroy()
+                    break
+
+
+
 def generate_vids() :
-    j = 0
-    for i in playlist_URLS :
-        try :
-            videos.append( pt.YouTube( i ) )
-            print( i )
-            print( 'appended' )
-            fio.write.add_to_data( videos[ j ] )
-            j += 1
-            print( 'added' )
-        except :
-            print( 'sht' )
-            continue
+    global done, video_titles
+    ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s', 'quiet':True,})
+    with ydl:
+        result = ydl.extract_info(URL,download=False)
+        print('done')
+        if 'entries' in result:
+            video = result['entries']
+            for i, item in enumerate(video):
+                video_titles.append(result['entries'][i]['title'])
+            fio.write.add_to_data_playlist(video)
+        done = True
+        print(like_counts, dislike_counts)
+        
+
 
 # Function to run all the things. Function to return to. Function that calls. Function that manages.
 def main() :
     global again, playlist_URLS
     while again :
-        #Graphs.plot_ratings_vs_videos()
-        #Graphs.plot_views_vs_videos()
+        # Graphs.plot_ratings_vs_videos()
+        # Graphs.plot_views_vs_videos()
         again = False
         window.intro_win()  # gets the URL
         if TYPE == 'SINGLE' :
@@ -678,9 +718,12 @@ def main() :
             playlist = pt.Playlist( URL )
             playlist._video_regex = re.compile( r"\"url\":\"(/watch\?v=[\w-]*)" )
             playlist_URLS = playlist.video_urls
+            print(playlist_URLS[0])
             T1 = threading.Thread( target = generate_vids )
             T1.start()
-            time.sleep( 4 )
+            app = loading()
+            T2 = threading.Thread( target = app.mainloop() )
+            T2.start()
             window.sel_downlaod_win_playlist( playlist )
         elif TYPE == 'STATISTICS' :
             window.statistics()

@@ -2,6 +2,10 @@
 This file is used to define functions that are going to take in a youtube object, and then write the data onto files.
 """
 # import pytube as pt
+import youtube_dl
+ydl_opts = {}
+
+
 
 
 def conv_len( length ) :
@@ -52,47 +56,95 @@ def get_data():
 class write:
     @staticmethod
     def add_to_data(video):
+        new_entry = True
+        print('data writing')
+        # getting likes and dislikes via youtube-dl
+        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            meta = ydl.extract_info(
+                    'https://www.youtube.com/watch?v=9bZkp7q19f0', download=False)
+            video_likes = meta['like_count']
+            video_dislikes = meta['dislike_count']
+            video_category = meta['categories'][0]
+            video_date = meta['upload_date']
         with open('data/Video titles.txt', 'a') as fout:
             with open( 'data/Video titles.txt', 'r' ) as fin :
                 video_titles = fin.readlines()
             if video.title + '\n' not in video_titles:
+                new_entry = True
                 fout.write(video.title + '\n')
-        length = conv_len(video.length)
-        with open('data/Video lengths.txt', 'a') as fout:
-            with open( 'data/Video lengths.txt', 'r' ) as fin :
-                video_lengths = fin.readlines()
-            if length + '\n' not in video_lengths:
-                fout.write(length + '\n')
-        with open('data/Video views.txt', 'a') as fout:
-            with open( 'data/Video views.txt', 'r' ) as fin :
-                video_views = fin.readlines()
-                print(video_views)
-            if video.views.__str__() + '\n' not in video_views:
-                fout.write(video.views.__str__() + '\n')
-        with open('data/Video authors.txt', 'a') as fout:
-            with open( 'data/Video authors.txt', 'r' ) as fin :
-                video_authors = fin.readlines()
-            if video.author + '\n' not in video_authors:
-                fout.write(video.author + '\n')
-        with open('data/Video ratings.txt', 'a') as fout:
-            with open( 'data/Video ratings.txt', 'r' ) as fin :
-                video_ratings = fin.readlines()
-            if video.rating.__str__() + '\n' not in video_ratings:
-                fout.write(video.rating.__str__() + '\n')
-        with open('data/Video publish_dates.txt', 'a') as fout:
-            with open( 'data/Video publish_dates.txt', 'r' ) as fin :
-                video_publish_dates = fin.readlines()
-            if video.publish_date.__str__() + '\n' not in video_publish_dates:
-                fout.write(video.publish_date.__str__() + '\n')
-        with open('data/Video age_restriction.txt', 'a') as fout:
-            with open( 'data/Video age_restriction.txt', 'r' ) as fin :
-                video_ageRestricted_list = fin.readlines()
-            if video.age_restricted.__str__() + '\n' not in video_ageRestricted_list:
-                fout.write(video.age_restricted.__str__() + '\n')
+                length = conv_len(video.length)
+            else: new_entry = False
+            
+        if new_entry:
+            with open('data/Video lengths.txt', 'a') as fout:
+                with open( 'data/Video lengths.txt', 'r' ) as fin :
+                    fout.write(length + '\n')
+            with open('data/Video views.txt', 'a') as fout:
+                with open( 'data/Video views.txt', 'r' ) as fin :
+                    fout.write(video.views.__str__() + '\n')
+            with open('data/Video likes.txt', 'a') as fout:
+                with open( 'data/Video likes.txt', 'r' ) as fin :
+                    fout.write(video_likes.__str__() + '\n')
+            with open('data/Video dislikes.txt', 'a') as fout:
+                with open( 'data/Video dislikes.txt', 'r' ) as fin :
+                    fout.write(video_dislikes.__str__() + '\n')
+            with open('data/Video authors.txt', 'a') as fout:
+                with open( 'data/Video authors.txt', 'r' ) as fin :
+                    fout.write(video.author + '\n')
+            with open('data/Video ratings.txt', 'a') as fout:
+                with open( 'data/Video ratings.txt', 'r' ) as fin :
+                    fout.write(video.rating.__str__() + '\n')
+            with open('data/Video publish_dates.txt', 'a') as fout:
+                with open( 'data/Video publish_dates.txt', 'r' ) as fin :
+                    fout.write(video_date.__str__() + '\n')
+            with open('data/Video categories.txt', 'a') as fout:
+                with open( 'data/Video categories.txt', 'r' ) as fin :
+                    fout.write(video_category.__str__() + '\n')
+      
+    @staticmethod
+    def add_to_data_playlist(video):
+        for i, item in enumerate(video):
+            new_entry = True
+            single_vid_title = video[i]['title']
+            with open('data/Video titles.txt', 'a') as fout:
+                with open( 'data/Video titles.txt', 'r' ) as fin :
+                    video_titles = fin.readlines()
+                if single_vid_title + '\n' not in video_titles:
+                    new_entry = True
+                    fout.write(single_vid_title + '\n')
+                else: new_entry = False
+
+            if new_entry:
+                with open('data/Video lengths.txt', 'a') as fout:
+                    with open( 'data/Video lengths.txt', 'r' ) as fin :
+                        fout.write(conv_len(int(video[i]['duration'])) + '\n')
+                with open('data/Video views.txt', 'a') as fout:
+                    with open( 'data/Video views.txt', 'r' ) as fin :
+                        fout.write(video[i]['view_count'].__str__() + '\n')
+                with open('data/Video likes.txt', 'a') as fout:
+                    with open( 'data/Video likes.txt', 'r' ) as fin :
+                        fout.write(video[i]['like_count'].__str__() + '\n')
+                with open('data/Video dislikes.txt', 'a') as fout:
+                    with open( 'data/Video dislikes.txt', 'r' ) as fin :
+                        fout.write(video[i]['dislike_count'].__str__() + '\n')
+                with open('data/Video authors.txt', 'a') as fout:
+                    with open( 'data/Video authors.txt', 'r' ) as fin :
+                        fout.write(video[i]['uploader'] + '\n')
+                with open('data/Video ratings.txt', 'a') as fout:
+                    with open( 'data/Video ratings.txt', 'r' ) as fin :
+                        fout.write(video[i]['average_rating'].__str__() + '\n')
+                with open('data/Video publish_dates.txt', 'a') as fout:
+                    with open( 'data/Video publish_dates.txt', 'r' ) as fin :
+                        fout.write(video[i]['upload_date'].__str__() + '\n')
+                with open('data/Video categories.txt', 'a') as fout:
+                    with open( 'data/Video categories.txt', 'r' ) as fin :
+                        fout.write(video[i]['categories'][0].__str__() + '\n')
+                print('done lol')
         
+
 class read:
     @staticmethod
-    def get_title():
+    def get_titles():
         with open('data/Video titles.txt', 'r') as fin:
             titles_list = fin.readlines()
             return titles_list
@@ -122,7 +174,17 @@ class read:
             authors_list = fin.readlines()
             return authors_list
     @staticmethod
-    def get_age_restriction():
-        with open('data/Video age_restriction.txt', 'r') as fin:
-            age_restriction_list = fin.readlines()
-            return age_restriction_list
+    def get_categories():
+        with open('data/Video categories.txt', 'r') as fin:
+            video_category_list = fin.readlines()
+            return video_category_list
+    @staticmethod
+    def get_likes():
+        with open('data/Video categories.txt', 'r') as fin:
+            video_likes_list = fin.readlines()
+            return video_likes_list
+    @staticmethod
+    def get_dislikes():
+        with open('data/Video categories.txt', 'r') as fin:
+            video_dislikes_list = fin.readlines()
+            return video_dislikes_list

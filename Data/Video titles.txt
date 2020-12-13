@@ -1,6 +1,3 @@
-Interstellar theme song - video
-Apple Silicon MacBook Pro For Developers?
-Python Tutorial: File Objects - Reading and Writing to Files
 Tkinter Python GUI Tutorial For Beginners 1 - Introduction to Tkinter
 Tkinter Python GUI Tutorial For Beginners 2 - Setting Up Python with PyCharm
 Tkinter Python GUI Tutorial For Beginners 3 - Creating First GUI Application with Tkinter
@@ -22,3 +19,5 @@ Getting Started with Python in Visual Studio Code | Python with VSCode
 Top 7 Programming Languages To Learn In 2020 | Best Programming Languages 2020
 Speech Recognition in Python | Speech To Text using Python
 How to Convert Text to Speech in Python using win32com.client
+Python Tutorial for Beginners - Full Course in 12 Hours (2020) - Python Mega Course
+Interstellar theme song - video

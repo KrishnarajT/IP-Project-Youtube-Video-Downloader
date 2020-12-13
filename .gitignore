@@ -3,6 +3,17 @@
 .ipynb_checkpoints/
 __pychache__/
 *.pyc
-YtDownEnv/
+IP Project Venv/
 temp.py
 temp.ipynb
+IP Project Venv/Scripts/activate
+IP Project Venv/Scripts/activate.bat
+IP Project Venv/Scripts/Activate.ps1
+IP Project Venv/Scripts/deactivate.bat
+IP Project Venv/Scripts/easy_install-3.8.exe
+IP Project Venv/Scripts/easy_install.exe
+IP Project Venv/Scripts/pip.exe
+IP Project Venv/Scripts/pip3.8.exe
+IP Project Venv/Scripts/pip3.exe
+IP Project Venv/Scripts/python.exe
+IP Project Venv/Scripts/pythonw.exe
