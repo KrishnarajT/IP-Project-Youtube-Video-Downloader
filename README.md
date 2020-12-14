@@ -1,46 +1,19 @@
 # IP Project - Youtube Video Downloader
 
-IP project made by : **Group No. 4 **
+IP project made by : _Group No. 4_
 1. Krishnaraj Thadesar
 2. Siddharth Jana
 4. Gourav Sharma
 
-It aims to let you downlaod youtube vidoes with ease.
-
-# How it looks like
-
-## _Intro Page - Entering Video URL_
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(3).png)
-
-## _Showing Video Information_ 
-_Users can click the **download** button to download_
-
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(1).png)
-
-## _Downloaded Video_
-
-_Users can click on **One more** to download more videos_
-
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots.png)
-
-## _Downloading a Playlist_
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(2).png)
-
-## Loading Screen for Playlist
-![]()
-
-## _Downloaded and removed videos from the Playlist_
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(4).png)
-
-## _Test Graph comparing video ratings vs videos_
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/06-12-20/Added%20Tabs%20and%20Graphs%202.png)
-
-## _Test Graph comparing video views vs videos_
-![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/06-12-20/Added%20Tabs%20and%20Graphs.png)
-
+# Aim
+It aims to let you downlaod youtube vidoes, as well as youtube playlists with ease. You should also be able to see some graphs and statistics on the videos you downloaded. Ease of access and intuitive user experience.
 
 # Things remaining to do
-1. Add more Graphs
+1. Fix some minor errors
+2. Fix playlist nor restarting
+3. Add Back button to statistics menu
+4. Add workarounds to video edge cases
+5. Add proper download error message boxes for user.
 
 # Features:
 1. Can download any youtube video from the URL
@@ -61,8 +34,12 @@ _Users can click on **One more** to download more videos_
 15. Makes use of OOP concepts like multitasking, parallel processing, modularity and polymorphism to work efficiently.
 
 
-# Dependencies
- > Active Connection to internet while running the program
+# Dependencies and System Requirements
+
+1. Active Connection to internet while running the program
+2. Minimum of a x64 or x86 computer
+3. 100 MB RAM, 200 MB Free Storage Space
+4. Monitor Resolution - 1280x720p 
 
 # Installation
 
@@ -99,9 +76,12 @@ and select that as the interpreter
 5. Run the code.
 
 
-# Limitations
+# Limitations and Scope
 1. Can only download video+audio upto 720p
-2. Maximum of 50 videos of a playlist can be downloaded at once
+2. Some Playlist links aren't supported 
+3. Only a maximum of 100 videos can be downlaod in a single playlist at once
+4. Requires constant maintainance, and version updates.
+5. Heavy Reliability on foreign Dependencies and modules.
 
 # Working
 
@@ -152,6 +132,9 @@ is provided to us bt the playlist URL)
 so with this URL, we can simply get the Youtube video urls, and then the process of 
 creation of a youtube object is repeated and the video is downlaoded.
 
+_______________________
+
+
 
 ### Graphs and Data Storage
 
@@ -161,9 +144,12 @@ from the Youtube object, you can get data about the youtube video such as
 3. rating
 4. author
 5. discription
+6. Date of Publication
+7. Likes to dislikes ratio
+8. Like count and dislike count
 etc
 
-so After downlaoding a video, this data is written to a single file, stored in `data/video_*`
+so After downlaoding a video, this data is written to a single file, stored in `data/video_(attribute)*`
 that can be verified manually.
 
 This data is written such that it does not overlap, and there are no repeated entries
@@ -185,6 +171,39 @@ statistics in the program.
 
 
 
+# How it looks like
 
+## _Intro Page - Entering Video URL_
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(3).png)
 
+## _Showing Video Information_ 
+_Users can click the **download** button to download_
+
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(1).png)
+
+## _Downloaded Video_
+
+_Users can click on **One more** to download more videos_
+
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots.png)
+
+## _Downloading a Playlist_
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(2).png)
+
+## Loading Screen for Playlist
+![]()
+
+## _Downloaded and removed videos from the Playlist_
+![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(4).png)
+
+# Bibliograpy and Credits
+Thanks to Teachers, Parents, and Group members for their support and Guidance
+
+Credits to https://youtube.com/Codemy for help on learning tkinter.
+Other helpful websites:
+
+1. https://www.stackoverflow.com
+2. https://www.github.com
+
+Credits to the developers of modules like Pytube and youtube_dl.
 
