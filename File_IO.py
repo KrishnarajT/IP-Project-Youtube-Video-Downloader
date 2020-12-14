@@ -180,11 +180,11 @@ class read:
             return video_category_list
     @staticmethod
     def get_likes():
-        with open('data/Video categories.txt', 'r') as fin:
+        with open('data/Video likes.txt', 'r') as fin:
             video_likes_list = fin.readlines()
             return video_likes_list
     @staticmethod
     def get_dislikes():
-        with open('data/Video categories.txt', 'r') as fin:
+        with open('data/Video dislikes.txt', 'r') as fin:
             video_dislikes_list = fin.readlines()
             return video_dislikes_list

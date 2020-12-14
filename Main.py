@@ -76,7 +76,7 @@ class window :
                     print( 'its a playlist' )
                 else :
                     TYPE = 'SINGLE'
-                print( 'this shit is the url', user_url )
+                print( 'this is the url', user_url )
                 URL = user_url
         
         # runs if you pressed the statistics button, redirects you to the statistics page.
@@ -590,7 +590,13 @@ class window :
         base_canvas_tab_3.create_window( (0, 0), window = tab_frame_3, anchor = "nw" )
         
         # ____Stuff in the tab___#
-        
+
+        bg_label_3 = tk.Label( tab_frame_3, text = 'Likes Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
+        bg_label_3.place( relx = 0.3, rely = 0.01 )
+        likes_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/likes_bar_graph.png' ) )
+        likes_graph_img_lbl = tk.Label( tab_frame_3, image = likes_graph_img )
+        likes_graph_img_lbl.place( relx = 0.25, rely = 0.03 )
+
         # ___#
         
         # _______________Tab 4__________________#
@@ -608,6 +614,12 @@ class window :
         base_canvas_tab_4.create_window( (0, 0), window = tab_frame_4, anchor = "nw" )
         
         # ____Stuff in the tab___#
+
+        bg_label_4 = tk.Label( tab_frame_4, text = 'Likes Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
+        bg_label_4.place( relx = 0.3, rely = 0.01 )
+        dislikes_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/dislikes_bar_graph.png' ) )
+        dislikes_graph_img_lbl = tk.Label( tab_frame_4, image = dislikes_graph_img )
+        dislikes_graph_img_lbl.place( relx = 0.25, rely = 0.03 )
         
         # ___#
         
@@ -640,8 +652,8 @@ class window :
         
         my_notebook.add( base_frame_tab_1, text = "views" )
         my_notebook.add( base_frame_tab_2, text = "ratings" )
-        my_notebook.add( base_frame_tab_3, text = "tab3" )
-        my_notebook.add( base_frame_tab_4, text = "tab4" )
+        my_notebook.add( base_frame_tab_3, text = "likes" )
+        my_notebook.add( base_frame_tab_4, text = "dislikes" )
         my_notebook.add( base_frame_tab_5, text = "tab5" )
         
         root.mainloop()
