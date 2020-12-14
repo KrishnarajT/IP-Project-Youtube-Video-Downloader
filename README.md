@@ -26,6 +26,9 @@ _Users can click on **One more** to download more videos_
 ## _Downloading a Playlist_
 ![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(2).png)
 
+## Loading Screen for Playlist
+![]()
+
 ## _Downloaded and removed videos from the Playlist_
 ![](https://github.com/KrishnarajT/IP-Project-Youtube-Video-Downloader/blob/main/Progress%20Images/12-11-20/Progress%20Screenshots%20(4).png)
 
@@ -38,11 +41,6 @@ _Users can click on **One more** to download more videos_
 
 # Things remaining to do
 1. Add more Graphs
-2. Add statistics button on main screens
-3. Add window management for graphs
-4. Reset and synchronize data files
-5. Fix video titles nto showing in playlist page.
-6. Split main.py into smaller files.
 
 # Features:
 1. Can download any youtube video from the URL
@@ -79,7 +77,7 @@ _Users can click on **One more** to download more videos_
 ### _To compile and edit the source code in your own Environment_ *(for group)* :
 
 1. _Python 3.7 to 3.9_ as of date of upload
-2. Modules _pytube 9.7_, _pillow_, _requests_, _pandas_, _matplotlib_
+2. Modules _pytube 9.7_, _pillow_, _requests_, _pandas_, _matplotlib_, _youtube-dl_
 
 ```shell script
 pip install pytube
@@ -87,6 +85,7 @@ pip install pillow
 pip install requests
 pip install pandas
 pip install matplotlib
+pip install youtube-dl
 ```
 
 ### Using the existing Environment to compile, edit, and view Source code (for group)
