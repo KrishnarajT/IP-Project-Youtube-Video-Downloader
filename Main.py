@@ -40,6 +40,7 @@ sth = 1
 again = True
 done = False
 video_titles = []
+video_titles_with_urls = []
 like_counts = []
 dislike_counts = []
 Quality_tag = 142
@@ -376,12 +377,15 @@ class window :
         def remove() :
             """used to remove the selected things from the menu of showing videos"""
             global download_list
-            print( 'you clicked rmeove' )
+            print( 'you clicked remove' )
             for item in reversed( all_videos.curselection() ) :
                 all_videos.delete( item )
             download_list = [ ]
             download_list = all_videos.get( 0, "end" )
-            print( download_list )
+            new_list = []
+            for i in range(len(download_list)):
+                new_list.append(download_list[i][1])
+            download_list = new_list
             remaining_lbl.config( text = len( download_list ) )
             total_vids_lbl.config( text = len( download_list ) )
         
@@ -473,7 +477,7 @@ class window :
         # displaying the listbox
         all_videos = tk.Listbox( canvas, yscrollcommand = scrollbar.set, width = 70, font = ("Calibre", 16, 'italic'), height = 7,
                                  selectmode = tk.EXTENDED )
-        for video in video_titles :
+        for video in video_titles_with_urls :
             all_videos.insert( tk.END, video )
         all_videos.place( rely = 0.533, relx = 0.02 )
         scrollbar.config( command = all_videos.yview )
@@ -722,15 +726,22 @@ class loading(tk.Tk):
 
 
 def generate_vids() :
-    global done, video_titles
+    global done, video_titles, video_titles_with_urls
+    video_titles_with_urls = [[] for i in range(len(playlist_URLS))]
+    print(video_titles_with_urls)
     ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s', 'quiet':True,})
     with ydl:
         result = ydl.extract_info(URL,download=False)
         print('done')
         if 'entries' in result:
             video = result['entries']
+            j = 0
             for i, item in enumerate(video):
                 video_titles.append(result['entries'][i]['title'])
+                video_titles_with_urls[j].append(video_titles[j])
+                video_titles_with_urls[j].append(playlist_URLS[j])
+                print(video_titles_with_urls)
+                j = j+1
             fio.write.add_to_data_playlist(video)
         done = True
         print(like_counts, dislike_counts)

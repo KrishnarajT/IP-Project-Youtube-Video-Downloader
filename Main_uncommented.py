@@ -280,6 +280,7 @@ class window :
                 all_videos.delete( item )
             download_list = [ ]
             download_list = all_videos.get( 0, "end" )
+            print(download_list)
             remaining_lbl.config( text = len( download_list ) )
             total_vids_lbl.config( text = len( download_list ) )
         
@@ -355,8 +356,8 @@ class window :
         
         all_videos = tk.Listbox( canvas, yscrollcommand = scrollbar.set, width = 70, font = ("Calibre", 16, 'italic'), height = 7,
                                  selectmode = tk.EXTENDED )
-        for video in video_titles :
-            all_videos.insert( tk.END, video )
+        for video in video_titles[0] :
+            all_videos.insert( tk.END, video[0] )
         all_videos.place( rely = 0.533, relx = 0.02 )
         scrollbar.config( command = all_videos.yview )
         
