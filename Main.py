@@ -68,15 +68,15 @@ class window :
             user_url = entry.get()
             r = requests.get( user_url )  # random video id
             if "Video unavailable" in r.text :
-                
+                print( 'video is invalid' )
                 TYPE = 'invalid'
             else :
                 if 'list=' in user_url :
                     TYPE = 'PLAYLIST'
-                    
+                    print( 'its a playlist' )
                 else :
                     TYPE = 'SINGLE'
-                
+                print( 'this is the url', user_url )
                 URL = user_url
         
         # runs if you pressed the statistics button, redirects you to the statistics page.
@@ -135,18 +135,20 @@ class window :
         def change_dropdown( *args ) :
             global sel_stream
             sel_stream = tkvar.get()
-            
+            print( 'value of the sel stream is : ', sel_stream )
             video_type = video_obj.streams.get_by_itag(
                     list( Tags.tags.keys() )[ list( Tags.tags.values() ).index( sel_stream ) ] )
             mbytes = (round( video_type.filesize / 1000000, 2 )).__str__() + ' MB'
-            
+            print( mbytes )
+            file_size_lbl.config( text = mbytes.__str__() )
         
         # opens the file explorer window to select the folder to download, and changes the global file path variable
         def open_file_explorer() :
             global FILENAME
             tk.Tk().withdraw()
             FILENAME = tk.filedialog.askdirectory()
-            
+            print( FILENAME )
+            file_path.config( text = FILENAME )
         
         # to show the progess bar, and update the values of the percentage downloaded
         def on_progress_dothis( stream, chunk: bytes, bytes_remaining: int ) -> None :  # pylint: disable=W0613
@@ -163,16 +165,18 @@ class window :
         # to download the video, part of the threading process, then calls the on_progress_do_this() function
         def download() :
             global maxbytes
-            
+            print( "Accessing YouTube URL..." )
             video = pt.YouTube( url, on_progress_callback = on_progress_dothis )
             video_type = video.streams.get_by_itag(
                     list( Tags.tags.keys() )[ list( Tags.tags.values() ).index( sel_stream ) ] )
-            
+            print( "Fetching" )
             maxbytes = video_type.filesize
             mbytes = (round( video_type.filesize / 1000000, 2 )).__str__() + ' MB'
-            
+            print( mbytes )
+            file_size_lbl.config( text = mbytes.__str__() )
             progress_bar[ "maximum" ] = maxbytes
-            
+            print( maxbytes )
+            video_type.download( FILENAME )
         
         # quits the window, after changing some global variables
         def restart() :
@@ -184,6 +188,7 @@ class window :
         # Starting the loop
         root = tk.Tk()
         tkvar = tk.StringVar( root )
+        print( tkvar )
         
         # Defining some image variables to be used in the buttons and the thumbnails
         
@@ -292,18 +297,20 @@ class window :
         def change_dropdown( *args ) :
             global sel_stream
             sel_stream = tkvar.get()
-            
+            print( 'value of the sel stream is : ', sel_stream )
             video_type = video_obj.streams.get_by_itag(
                     list( Tags.tags.keys() )[ list( Tags.tags.values() ).index( sel_stream ) ] )
             mbytes = (round( video_type.filesize / 1000000, 2 )).__str__() + ' MB'
-            
+            print( mbytes )
+            file_size_lbl.config( text = mbytes.__str__() )
         
         # opens the file explorer window to select the folder to download, and changes the global file path variable
         def open_file_explorer() :
             global FILENAME
             tk.Tk().withdraw()
             FILENAME = tk.filedialog.askdirectory()
-            
+            print( FILENAME )
+            file_path.config( text = FILENAME )
         
         # to show the progess bar, and update the values of the percentage downloaded
         def on_progress_dothis( stream, chunk: bytes, bytes_remaining: int ) -> None :  # pylint: disable=W0613
@@ -323,9 +330,9 @@ class window :
             total_vids = len( download_list )
             downloaded = 0
             skipped = 0
-            
+            print( len( download_list ) )
             for vids in download_list :
-                
+                print( "Accessing YouTube URL..." )
                 vid = pt.YouTube( vids, on_progress_callback = on_progress_dothis )
                 video_type = vid.streams.get_by_itag(
                         list( Tags.tags.keys() )[ list( Tags.tags.values() ).index( sel_stream ) ] )
@@ -344,12 +351,14 @@ class window :
                 vid_length.config( text = vid_len1 )
                 video_tnl.config( image = img1 )
                 
-                
+                print( "Fetching" )
                 maxbytes = video_type.filesize
                 mbytes = (round( video_type.filesize / 1000000, 2 )).__str__() + ' MB'
-                
+                print( mbytes )
+                file_size_lbl.config( text = mbytes.__str__() )
                 progress_bar[ "maximum" ] = maxbytes
-                
+                print( maxbytes )
+                video_type.download( FILENAME )
                 downloaded += 1
                 downloaded_lbl.config( text = downloaded.__str__() )
                 remaining = total_vids - downloaded
@@ -367,19 +376,20 @@ class window :
         def remove() :
             """used to remove the selected things from the menu of showing videos"""
             global download_list
-            
+            print( 'you clicked rmeove' )
             for item in reversed( all_videos.curselection() ) :
                 all_videos.delete( item )
             download_list = [ ]
             download_list = all_videos.get( 0, "end" )
-            
+            print( download_list )
             remaining_lbl.config( text = len( download_list ) )
             total_vids_lbl.config( text = len( download_list ) )
         
         # Starting the loop
         root = tk.Tk()
         tkvar = tk.StringVar( root )
-        
+        print( tkvar )
+        # Defining some image variables to be used in the buttons and the thumbnails
         
         dimg = Image.open( DOWNLOAD_IMAGE )
         dimg = dimg.resize( (167, 51), Image.ANTIALIAS )
@@ -509,18 +519,18 @@ class window :
     
     @staticmethod
     def statistics() :
-        
+    
         root = tk.Tk()
         root.geometry( "1280x720" )
-        
+    
         # Creating the notebook, that enables tabs
         my_notebook = ttk.Notebook( root )
         my_notebook.pack()
-        
+    
         # _____________Views Tab_________________#
-        
+    
         base_frame_tab_1 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-        
+    
         # Adding a scrollbar to that tab
         base_canvas_tab_1 = tk.Canvas( base_frame_tab_1, width = 1250, height = 5000 )
         base_canvas_tab_1.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -530,9 +540,9 @@ class window :
         base_canvas_tab_1.bind( '<Configure>', lambda e : base_canvas_tab_1.configure( scrollregion = base_canvas_tab_1.bbox( "all" ) ) )
         tab_frame_1 = tk.Frame( base_canvas_tab_1, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_1.create_window( (0, 0), window = tab_frame_1, anchor = "nw" )
-        
+    
         # ____Stuff in the tab___#
-        
+    
         bg_label_1 = tk.Label( tab_frame_1, text = 'Views Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
         bg_label_1.place( relx = 0.3, rely = 0.01 )
         views_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/views_line_graph.png' ) )
@@ -544,13 +554,13 @@ class window :
         views_graph_img_3 = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/views_hist_graph.png' ) )
         views_graph_img_3_lbl = tk.Label( tab_frame_1, image = views_graph_img_3 )
         views_graph_img_3_lbl.place( relx = 0.25, rely = 0.23 )
-        
+    
         # ___#
-        
+    
         # _______________Ratings Tab__________________#
-        
+    
         base_frame_tab_2 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-        
+    
         # Adding scrollbar to that tab
         base_canvas_tab_2 = tk.Canvas( base_frame_tab_2, width = 1250, height = 5000 )
         base_canvas_tab_2.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -560,9 +570,9 @@ class window :
         base_canvas_tab_2.bind( '<Configure>', lambda e : base_canvas_tab_2.configure( scrollregion = base_canvas_tab_2.bbox( "all" ) ) )
         tab_frame_2 = tk.Frame( base_canvas_tab_2, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_2.create_window( (0, 0), window = tab_frame_2, anchor = "nw" )
-        
+    
         # ____Stuff in the tab___#
-        
+    
         bg_label_2 = tk.Label( tab_frame_2, text = 'Ratings Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
         bg_label_2.place( relx = 0.3, rely = 0.01 )
         ratings_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/ratings_bar_graph.png' ) )
@@ -571,13 +581,13 @@ class window :
         ratings_graph_img_2 = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/ratings_hist_graph.png' ) )
         ratings_graph_img_2_lbl = tk.Label( tab_frame_2, image = ratings_graph_img_2 )
         ratings_graph_img_2_lbl.place( relx = 0.25, rely = 0.13 )
-        
+    
         # ___#
-        
+    
         # _______________Tab 3__________________#
-        
+    
         base_frame_tab_3 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-        
+    
         # Adding scrollbar to that tab
         base_canvas_tab_3 = tk.Canvas( base_frame_tab_3, width = 1250, height = 5000 )
         base_canvas_tab_3.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -587,9 +597,9 @@ class window :
         base_canvas_tab_3.bind( '<Configure>', lambda e : base_canvas_tab_3.configure( scrollregion = base_canvas_tab_3.bbox( "all" ) ) )
         tab_frame_3 = tk.Frame( base_canvas_tab_3, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_3.create_window( (0, 0), window = tab_frame_3, anchor = "nw" )
-        
+    
         # ____Stuff in the tab___#
-
+    
         bg_label_3 = tk.Label( tab_frame_3, text = 'Likes Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
         bg_label_3.place( relx = 0.3, rely = 0.01 )
         likes_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/likes_hist_graph.png' ) )
@@ -598,13 +608,13 @@ class window :
         likes_graph_img_2 = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/likes_line_graph.png' ) )
         likes_graph_img_2_lbl = tk.Label( tab_frame_3, image = likes_graph_img_2 )
         likes_graph_img_2_lbl.place( relx = 0.25, rely = 0.13 )
-
+    
         # ___#
-        
+    
         # _______________Tab 4__________________#
-        
+    
         base_frame_tab_4 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-        
+    
         # Adding scrollbar to that tab
         base_canvas_tab_4 = tk.Canvas( base_frame_tab_4, width = 1250, height = 5000 )
         base_canvas_tab_4.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -614,9 +624,9 @@ class window :
         base_canvas_tab_4.bind( '<Configure>', lambda e : base_canvas_tab_4.configure( scrollregion = base_canvas_tab_4.bbox( "all" ) ) )
         tab_frame_4 = tk.Frame( base_canvas_tab_4, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_4.create_window( (0, 0), window = tab_frame_4, anchor = "nw" )
-        
+    
         # ____Stuff in the tab___#
-
+    
         bg_label_4 = tk.Label( tab_frame_4, text = 'Dislikes Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
         bg_label_4.place( relx = 0.3, rely = 0.01 )
         dislikes_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/dislikes_bar_graph.png' ) )
@@ -625,13 +635,13 @@ class window :
         dislikes_graph_img_2 = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/dislikes_hist_graph.png' ) )
         dislikes_graph_img_2_lbl = tk.Label( tab_frame_4, image = dislikes_graph_img_2 )
         dislikes_graph_img_2_lbl.place( relx = 0.25, rely = 0.13 )
-        
+    
         # ___#
-        
+    
         # _______________Tab 5__________________#
-        
+    
         base_frame_tab_5 = tk.Frame( my_notebook, width = 1280, height = 5000, bg = "#65A8E8" )
-        
+    
         # Adding scrollbar to that tab
         base_canvas_tab_5 = tk.Canvas( base_frame_tab_5, width = 1250, height = 5000 )
         base_canvas_tab_5.pack( side = tk.LEFT, fill = tk.BOTH, expand = 1 )
@@ -641,9 +651,9 @@ class window :
         base_canvas_tab_5.bind( '<Configure>', lambda e : base_canvas_tab_5.configure( scrollregion = base_canvas_tab_5.bbox( "all" ) ) )
         tab_frame_5 = tk.Frame( base_canvas_tab_5, width = 1280, height = 5000, bg = "#65A8E8" )
         base_canvas_tab_5.create_window( (0, 0), window = tab_frame_5, anchor = "nw" )
-        
+    
         # ____Stuff in the tab___#
-
+    
         bg_label_5 = tk.Label( tab_frame_5, text = 'Categories Vs Videos Downloaded', bg = '#65A8E8', font = ("Calibre", 30) )
         bg_label_5.place( relx = 0.3, rely = 0.01 )
         categories_graph_img = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/categories_bar_graph.png' ) )
@@ -652,24 +662,24 @@ class window :
         categories_graph_img_2 = ImageTk.PhotoImage( Image.open( 'Assets/Graphs/categories_pie_chart.png' ) )
         categories_graph_img_2_lbl = tk.Label( tab_frame_5, image = categories_graph_img_2 )
         categories_graph_img_2_lbl.place( relx = 0.25, rely = 0.13 )
-        
+    
         # ___#
-        
+    
         # ____________End of declaring Tabs_____________#
         # ___________Adding them to the notebook, and activating them_________#
-        
+    
         base_frame_tab_1.pack( fill = "both", expand = 1 )
         base_frame_tab_2.pack( fill = "both", expand = 1 )
         base_frame_tab_3.pack( fill = "both", expand = 1 )
         base_frame_tab_4.pack( fill = "both", expand = 1 )
         base_frame_tab_5.pack( fill = "both", expand = 1 )
-        
+    
         my_notebook.add( base_frame_tab_1, text = "Views" )
         my_notebook.add( base_frame_tab_2, text = "Ratings" )
         my_notebook.add( base_frame_tab_3, text = "Likes" )
         my_notebook.add( base_frame_tab_4, text = "Dislikes" )
         my_notebook.add( base_frame_tab_5, text = "Categories" )
-        
+    
         root.mainloop()
 
 class loading(tk.Tk):
@@ -723,7 +733,8 @@ def generate_vids() :
                 video_titles.append(result['entries'][i]['title'])
             fio.write.add_to_data_playlist(video)
         done = True
-        
+        print(like_counts, dislike_counts)
+
 
 
 # Function to run all the things. Function to return to. Function that calls. Function that manages.
@@ -743,7 +754,7 @@ def main() :
             playlist = pt.Playlist( URL )
             playlist._video_regex = re.compile( r"\"url\":\"(/watch\?v=[\w-]*)" )
             playlist_URLS = playlist.video_urls
-            
+            print(playlist_URLS[0])
             T1 = threading.Thread( target = generate_vids )
             T1.start()
             app = loading()
@@ -754,6 +765,6 @@ def main() :
             window.statistics()
     
     if not again :
-        print('Thanks for using Kappa!')
+        print( 'Thanks for using Kappa video downloader' )
 
 main()
