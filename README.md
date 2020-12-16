@@ -1,6 +1,6 @@
 # IP Project - Youtube Video Downloader
 
-IP project made by : _Group No. 4_
+IP project made by : _Group No. 5_
 1. Krishnaraj Thadesar
 2. Siddharth Jana
 4. Gourav Sharma
@@ -8,12 +8,6 @@ IP project made by : _Group No. 4_
 # Aim
 It aims to let you downlaod youtube vidoes, as well as youtube playlists with ease. You should also be able to see some graphs and statistics on the videos you downloaded. Ease of access and intuitive user experience.
 
-# Things remaining to do
-1. Fix some minor errors
-2. Fix playlist nor restarting
-3. Add Back button to statistics menu
-4. Add workarounds to video edge cases
-5. Add proper download error message boxes for user.
 
 # Features:
 1. Can download any youtube video from the URL
