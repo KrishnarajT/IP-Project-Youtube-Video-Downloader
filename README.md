@@ -59,17 +59,6 @@ pip install matplotlib
 pip install youtube-dl
 ```
 
-### Using the existing Environment to compile, edit, and view Source code (for group)
-
-1. **Pycharm, Thonny** or any text editor that supports addition of Virtual Environments
-2. Download or clone the repository in your computer
-3. Extract the zip file into a convenient folder
-4. In Pycharm, Navigate to 
-`Settings -> Interpreter Settings -> Change Interpreter -> add existing Interpreter -> navigate to '~/YtDownEnv/Scripts/python.exe'`
-and select that as the interpreter
-5. Run the code.
-
-
 # Limitations and Scope
 1. Can only download video+audio upto 720p
 2. Some Playlist links aren't supported 
@@ -144,11 +133,9 @@ from the Youtube object, you can get data about the youtube video such as
 etc
 
 so After downlaoding a video, this data is written to a single file, stored in `data/video_(attribute)*`
-that can be verified manually.
 
 This data is written such that it does not overlap, and there are no repeated entries
-Storing this data in files is so that it can be retrieved later. If it was not for 
-files, we would save this data on an SQL server.
+Storing this data in files is so that it can be retrieved later.
 
 We can retrieve the data from these files using the `fileIO.py` file. This file has a 
 `read` class, that has functions like `get_title()` or `get_views()` etc. These 
