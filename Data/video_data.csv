@@ -1,0 +1,380 @@
+video_title,video_views,video_dislikes,video_likes,video_rating,video_length,video_category,video_author,video_publish_date
+Tkinter Python GUI Tutorial For Beginners 1 - Introduction to Tkinter,515,515.0,515,515.0,00:08.0:35.0,Education,ProgrammingKnowledge,20190314
+Tkinter Python GUI Tutorial For Beginners 2 - Setting Up Python with PyCharm,33142,74.0,117,33142.0,0:06:27,Education,ProgrammingKnowledge,20190324
+Tkinter Python GUI Tutorial For Beginners 3 - Creating First GUI Application with Tkinter,33093,15.0,257,33093.0,00:015:21,Education,ProgrammingKnowledge,20190324
+Tkinter Python GUI Tutorial For Beginners 4 - Handle Button Click Event,29539,19.0,193,29539.0,00:012:14,Education,ProgrammingKnowledge,20190328
+"Tkinter Python GUI Tutorial For Beginners 5 - Entry Widget, ComboBox widget, Tkinter Image",19550,6.0,182,19550.0,00:021:31,Education,ProgrammingKnowledge,20190404
+"Tkinter Python GUI Tutorial For Beginners 6 - Radiobuttons, Checkboxes, MessageBox",10355,4.0,81,10355.0,00:019:53,Education,ProgrammingKnowledge,20190409
+Tkinter Python GUI Tutorial For Beginners 7 - Creating Menus with Tkinter,8691,4.0,79,8691.0,00:010:53,Education,ProgrammingKnowledge,20190414
+Full Python Programming Course | Python Tutorial for Beginners | Learn Python,550587,151.0,7598,550587.0,9:46:43,Education,ProgrammingKnowledge,20190423
+Tkinter Python GUI Tutorial For Beginners 8 - Open New Window on Button Click - Multiple Windows,23023,10.0,206,23023.0,00:012:21,Education,ProgrammingKnowledge,20190426
+Tkinter Python GUI Tutorial For Beginners 9 - Connect Tkinter App To The SQLite Database,9352,10.0,106,9352.0,00:016:30,Education,ProgrammingKnowledge,20190603
+Tkinter Python GUI Tutorial For Beginners 10 - Create Simple Paint Application Using Tkinter,13412,16.0,157,13412.0,00:022:19,Education,ProgrammingKnowledge,20190605
+Tkinter Python GUI Tutorial For Beginners 11 - Tic-Tac-Toe Game in python 3 Tkinter,13850,21.0,121,13850.0,00:012:24,Education,ProgrammingKnowledge,20190608
+Tkinter Python GUI Tutorial For Beginners 12 - Simple GUI Calculator using Tkinter,20119,19.0,190,20119.0,00:011:49,Education,ProgrammingKnowledge,20190611
+Tkinter Python GUI Tutorial For Beginners 13-  How to embed Matplotlib graph to Tkinter GUI,20251,27.0,175,20251.0,00:012:46,Education,ProgrammingKnowledge,20190617
+Master The Basics Of Tkinter - Full Tkinter Programming Course,21762,14.0,355,21762.0,3:00:50,Education,ProgrammingKnowledge,20190626
+Install PyCharm IDE on Windows 10 + Creating and Running Your First Python Project,161288,104.0,1893,161288.0,00:012:16,Education,ProgrammingKnowledge,20190909
+TEXT TO SPEECH IN PYTHON | Convert Text to Speech in Python,96840,81.0,1733,96840.0,00:011:26,Education,ProgrammingKnowledge,20190910
+Getting Started with Python in Visual Studio Code | Python with VSCode,293629,257.0,3277,293629.0,00:014:38,Education,ProgrammingKnowledge,20190912
+Top 7 Programming Languages To Learn In 2020 | Best Programming Languages 2020,64228,50.0,1107,64228.0,00:010:26,Education,ProgrammingKnowledge,20191220
+Speech Recognition in Python | Speech To Text using Python,5705,8.0,171,5705.0,0:07:23,Education,ProgrammingKnowledge,20200209
+How to Convert Text to Speech in Python using win32com.client,3031,3.0,109,3031.0,0:05:17,Education,ProgrammingKnowledge,20200215
+Python Tutorial for Beginners - Full Course in 12 Hours (2020) - Python Mega Course,27993,11.0,685,27993.0,11:46:25,Education,ProgrammingKnowledge,20200218
+Interstellar theme song - video,8027695,15289.0,20204325,8027695.0,0:08:42,Music,K Peti,20190611
+Crash Course Physics Preview,829267,192.0,21853,829267.0,0:02:36,Education,CrashCourse,20160218
+Motion in a Straight Line: Crash Course Physics #1,3599269,1625.0,47932,3599269.0,00:010:40,Education,CrashCourse,20160331
+Derivatives: Crash Course Physics #2,1425119,938.0,20090,1425119.0,00:010:2,Education,CrashCourse,20160407
+Integrals: Crash Course Physics #3,768377,380.0,10852,768377.0,00:010:9,Education,CrashCourse,20160414
+Vectors and 2D Motion: Crash Course Physics #4,1060964,348.0,12616,1060964.0,00:010:6,Education,CrashCourse,20160421
+Newton's Laws: Crash Course Physics #5,2876867,1407.0,32042,2876867.0,00:011:4,Education,CrashCourse,20160428
+Friction: Crash Course Physics #6,1154324,511.0,12586,1154324.0,00:010:59,Education,CrashCourse,20160505
+Uniform Circular Motion: Crash Course Physics #7,1189076,553.0,14210,1189076.0,0:09:54,Education,CrashCourse,20160512
+Newtonian Gravity: Crash Course Physics #8,788397,298.0,9867,788397.0,0:09:20,Education,CrashCourse,20160519
+"Work, Energy, and Power: Crash Course Physics #9",1779852,769.0,20669,1779852.0,0:09:55,Education,CrashCourse,20160526
+Collisions: Crash Course Physics #10,901732,326.0,10220,901732.0,0:09:21,Education,CrashCourse,20160602
+Rotational Motion: Crash Course Physics #11,809797,412.0,8573,809797.0,0:08:55,Education,CrashCourse,20160609
+Torque: Crash Course Physics #12,740853,352.0,10024,740853.0,0:08:03,Education,CrashCourse,20160616
+Statics: Crash Course Physics #13,414469,152.0,5843,414469.0,0:09:08,Education,CrashCourse,20160623
+Fluids at Rest: Crash Course Physics #14,654563,171.0,9978,654563.0,0:09:59,Education,CrashCourse,20160708
+Fluids in Motion: Crash Course Physics #15,698670,240.0,11143,698670.0,0:09:47,Education,CrashCourse,20160714
+Simple Harmonic Motion: Crash Course Physics #16,985964,456.0,12016,985964.0,0:09:11,Education,CrashCourse,20160721
+Traveling Waves: Crash Course Physics #17,1165270,422.0,14406,1165270.0,0:07:45,Education,CrashCourse,20160728
+Sound: Crash Course Physics #18,1053970,458.0,11443,1053970.0,0:09:39,Education,CrashCourse,20160804
+The Physics of Music: Crash Course Physics #19,494929,203.0,7771,494929.0,00:010:35,Education,CrashCourse,20160811
+Temperature: Crash Course Physics #20,331104,125.0,4535,331104.0,0:09:01,Education,CrashCourse,20160818
+Kinetic Theory and Phase Changes: Crash Course Physics #21,370898,138.0,4554,370898.0,0:09:09,Education,CrashCourse,20160901
+The Physics of Heat: Crash Course Physics #22,596421,303.0,7360,596421.0,0:09:16,Education,CrashCourse,20160908
+Thermodynamics: Crash Course Physics #23,996752,491.0,13372,996752.0,00:010:4,Education,CrashCourse,20160915
+Engines: Crash Course Physics #24,247916,122.0,3641,247916.0,00:010:21,Education,CrashCourse,20160922
+Electric Charge: Crash Course Physics #25,1388422,553.0,17667,1388422.0,0:09:42,Education,CrashCourse,20160929
+Electric Fields: Crash Course Physics #26,984168,559.0,10815,984168.0,0:09:57,Education,CrashCourse,20161007
+"Voltage, Electric Energy, and Capacitors: Crash Course Physics #27",561545,539.0,6079,561545.0,00:010:14,Education,CrashCourse,20161014
+Electric Current: Crash Course Physics #28,787393,485.0,8428,787393.0,0:08:23,Education,CrashCourse,20161020
+DC Resistors & Batteries: Crash Course Physics #29,310673,119.0,3852,310673.0,00:010:48,Education,CrashCourse,20161027
+Circuit Analysis: Crash Course Physics #30,682786,313.0,9908,682786.0,00:010:56,Education,CrashCourse,20161104
+Capacitors and Kirchhoff: Crash Course Physics #31,276247,123.0,3281,276247.0,00:010:38,Education,CrashCourse,20161118
+Magnetism: Crash Course Physics #32,1111774,687.0,14144,1111774.0,0:09:47,Education,CrashCourse,20161201
+Ampère's Law: Crash Course Physics #33,376519,200.0,5526,376519.0,0:08:45,Education,CrashCourse,20161208
+Induction - An Introduction: Crash Course Physics #34,631160,447.0,7985,631160.0,0:09:49,Education,CrashCourse,20161216
+How Power Gets to Your Home: Crash Course Physics #35,217500,140.0,3121,217500.0,0:08:33,Education,CrashCourse,20161222
+AC Circuits: Crash Course Physics #36,378354,518.0,5102,378354.0,00:010:7,Education,CrashCourse,20170106
+Maxwell's Equations: Crash Course Physics #37,517158,558.0,8429,517158.0,00:010:49,Education,CrashCourse,20170113
+Geometric Optics: Crash Course Physics #38,532837,259.0,7536,532837.0,0:09:40,Education,CrashCourse,20170119
+Light Is Waves: Crash Course Physics #39,749819,394.0,8300,749819.0,0:09:45,Education,CrashCourse,20170126
+Spectra Interference: Crash Course Physics #40,183628,63.0,2574,183628.0,0:08:25,Education,CrashCourse,20170202
+Optical Instruments: Crash Course Physics #41,231924,159.0,3194,231924.0,00:010:36,Education,CrashCourse,20170216
+Special Relativity: Crash Course Physics #42,789257,520.0,15644,789257.0,0:08:59,Education,CrashCourse,20170223
+Quantum Mechanics - Part 1: Crash Course Physics #43,1519666,772.0,23977,1519666.0,0:08:45,Education,CrashCourse,20170303
+Quantum Mechanics - Part 2: Crash Course Physics #44,348542,119.0,6461,348542.0,0:09:08,Education,CrashCourse,20170309
+Nuclear Physics: Crash Course Physics #45,602033,305.0,9745,602033.0,00:010:24,Education,CrashCourse,20170320
+Astrophysics and Cosmology: Crash Course Physics #46,430937,136.0,10429,430937.0,0:09:21,Education,CrashCourse,20170324
+Lecture - 1 Introduction to Quantum Physics;Heisenberg''s uncertainty principle,1178521,236.0,8240,1178521.0,1:00:56,Education,nptelhrd,20081216
+Lecture - 2 Introduction to linear vector spaces,366195,74.0,1844,366195.0,1:03:17,Education,nptelhrd,20081217
+Lecture - 3 Characteristics of linear vector spaces,114064,14.0,571,114064.0,1:02:12,Education,nptelhrd,20081217
+Lecture - 4 Functions in a linear vector space,82961,14.0,310,82961.0,00:059:5,Education,nptelhrd,20090105
+Lecture - 5 Linear operations in a linear vector space and their eigenvalues,71451,9.0,303,71451.0,1:05:21,Education,nptelhrd,20090105
+Lecture - 6 Classical Vs Quantum Mechanics,116862,13.0,550,116862.0,00:057:52,Education,nptelhrd,20090106
+Lecture - 7 Quantum Physics,103138,7.0,376,103138.0,1:07:51,Education,nptelhrd,20090107
+Lecture - 8 Quantum Physics,66213,10.0,227,66213.0,00:057:7,Education,nptelhrd,20090110
+Lecture - 9 Quantum Physics,51110,9.0,206,51110.0,1:02:10,Education,nptelhrd,20090116
+Lecture - 10 Quantum Physics,47624,3.0,217,47624.0,00:052:57,Education,nptelhrd,20090116
+Lecture - 11 Quantum Physics,47722,5.0,194,47722.0,1:32:52,Education,nptelhrd,20090121
+Lecture - 12 Quantum Physics,48897,5.0,164,48897.0,1:00:49,Education,nptelhrd,20090129
+Lecture - 13 Quantum Physics,34534,5.0,145,34534.0,1:03:27,Education,nptelhrd,20090304
+Lecture - 14 Quantum Physics,31275,6.0,120,31275.0,1:01:08,Education,nptelhrd,20090304
+Lecture - 15 Quantum Physics,42922,2.0,121,42922.0,00:057:4,Education,nptelhrd,20090304
+Lecture - 16 Quantum Physics,27464,2.0,86,27464.0,00:059:14,Education,nptelhrd,20090304
+Lecture - 17 Quantum Physics,29591,3.0,110,29591.0,1:01:58,Education,nptelhrd,20090304
+Lecture - 18 Quantum Physics,28001,4.0,98,28001.0,1:01:32,Education,nptelhrd,20090318
+Lecture - 19 Quantum Physics,26063,2.0,126,26063.0,1:00:30,Education,nptelhrd,20090317
+Lecture - 20 Quantum Physics,30113,2.0,146,30113.0,1:02:45,Education,nptelhrd,20090317
+Lecture - 21 Quantum Physics,23954,4.0,69,23954.0,1:04:10,Education,nptelhrd,20090317
+Lecture - 22 Quantum Physics,22241,3.0,80,22241.0,00:052:45,Education,nptelhrd,20090317
+Lecture - 23 Quantum Physics,31124,9.0,89,31124.0,1:01:54,Education,nptelhrd,20090317
+Lecture - 24 Quantum Physics,21829,2.0,74,21829.0,1:02:34,Education,nptelhrd,20090330
+Lecture - 25 Quantum Physics,36791,3.0,90,36791.0,1:08:48,Education,nptelhrd,20090330
+Lecture - 26 Quantum Physics,19981,0.0,72,19981.0,00:059:57,Education,nptelhrd,20090330
+Lecture - 27 Quantum Physics,19944,2.0,65,19944.0,1:04:02,Education,nptelhrd,20090330
+Lecture - 28 Quantum Physics,21847,2.0,72,21847.0,1:01:00,Education,nptelhrd,20090330
+Lecture - 29 Quantum Physics,59360,11.0,407,59360.0,1:13:57,Education,nptelhrd,20090330
+Lecture - 30 Quantum Physics,30611,3.0,146,30611.0,1:03:06,Education,nptelhrd,20090330
+Lecture - 31 Quantum Physics,38000,3.0,140,38000.0,00:057:40,Education,nptelhrd,20090330
+Crash Course Organic Chemistry Preview,279511,120.0,8917,279511.0,0:03:34,Education,CrashCourse,20200422
+What Is Organic Chemistry?: Crash Course Organic Chemistry #1,294949,158.0,8959,294949.0,00:010:16,Education,CrashCourse,20200430
+The Basics of Organic Nomenclature: Crash Course Organic Chemistry #2,190035,72.0,5601,190035.0,00:012:48,Education,CrashCourse,20200506
+More Organic Nomenclature: Heteroatom Functional Groups: Crash Course Organic Chemistry #3,101309,45.0,2489,101309.0,00:012:24,Education,CrashCourse,20200520
+3D Structure and Bonding: Crash Course Organic Chemistry #4,110517,36.0,2759,110517.0,00:014:33,Education,CrashCourse,20200527
+IR Spectroscopy and Mass Spectrometry: Crash Course Organic Chemistry #5,111157,36.0,2923,111157.0,00:013:51,Education,CrashCourse,20200609
+Alkanes: Crash Course Organic Chemistry #6,84393,44.0,2339,84393.0,00:011:51,Education,CrashCourse,20200624
+Cyclohexanes: Crash Course Organic Chemistry #7,79442,44.0,2062,79442.0,00:014:9,Education,CrashCourse,20200708
+Stereochemistry: Crash Course Organic Chemistry #8,89193,33.0,2504,89193.0,00:014:35,Education,CrashCourse,20200723
+More Stereochemical Relationships: Crash Course Organic Chemistry #9,64240,21.0,1540,64240.0,00:012:48,Education,CrashCourse,20200805
+"Polarity, Resonance, and Electron Pushing: Crash Course Organic Chemistry #10",81036,62.0,2662,81036.0,00:011:46,Education,CrashCourse,20200819
+Acidity: Crash Course Organic Chemistry #11,94964,70.0,2896,94964.0,00:011:18,Education,CrashCourse,20200903
+Nucleophiles and Electrophiles: Crash Course Organic Chemistry #12,50026,34.0,1497,50026.0,00:012:8,Education,CrashCourse,20200916
+Intro to Reaction Mechanisms: Crash Course Organic Chemistry #13,56964,25.0,1619,56964.0,00:012:43,Education,CrashCourse,20200930
+"E/Z Alkenes, Electrophilic Addition, & Carbocations: Crash Course Organic Chemistry #14",34687,11.0,1005,34687.0,00:014:2,Education,CrashCourse,20201014
+Thermodynamics and Energy Diagrams: Crash Course Organic Chemistry #15,200513,50.0,17326,200513.0,00:011:12,Education,CrashCourse,20201028
+Alkene Addition Reactions: Crash Course Organic Chemistry #16,41905,26.0,1133,41905.0,00:012:53,Education,CrashCourse,20201111
+Alkene Redox Reactions: Crash Course Organic Chemistry #17,22106,17.0,625,22106.0,00:011:9,Education,CrashCourse,20201203
+"Is It Too Late To Stop Climate Change? Well, it's Complicated.",4434228,7679.0,324371,4434228.0,00:010:7,Education,Kurzgesagt – In a Nutshell,20200929
+What Is Intelligence? Where Does it Begin?,5850425,2776.0,316949,5850425.0,0:09:45,Education,Kurzgesagt – In a Nutshell,20200712
+"Why Are You Alive – Life, Energy & ATP",6074404,3815.0,342459,6074404.0,00:011:31,Education,Kurzgesagt – In a Nutshell,20200510
+What if We Nuke a City?,13679310,13770.0,581386,13679310.0,0:08:56,Education,Kurzgesagt – In a Nutshell,20191013
+Who Is Responsible For Climate Change? – Who Needs To Fix It?,5430457,9365.0,327316,5430457.0,00:010:36,Education,Kurzgesagt – In a Nutshell,20200621
+Wormholes Explained – Breaking Spacetime,14188226,4784.0,371531,14188226.0,0:09:12,Education,Kurzgesagt – In a Nutshell,20180812
+Why Beautiful Things Make us Happy – Beauty Explained,6099482,2636.0,274484,6099482.0,0:07:37,Education,Kurzgesagt – In a Nutshell,20181023
+String Theory Explained – What is The True Nature of Reality?,15566878,6222.0,465117,15566878.0,0:08:01,Education,Kurzgesagt – In a Nutshell,20180301
+Is Organic Really Better? Healthy Food or Trendy Scam?,7708121,6810.0,271832,7708121.0,0:09:20,Education,Kurzgesagt – In a Nutshell,20190113
+End of Space – Creating a Prison for Humanity,8934404,4364.0,278543,8934404.0,0:08:39,Education,Kurzgesagt – In a Nutshell,20181125
+#0 Python Tutorial | Python Programming Tutorial for Beginners | Course Introduction,3280718,463.0,36617,3280718.0,0:01:06,Science & Technology,Telusko,20180816
+#1 Python Tutorial for Beginners | Introduction to Python,2207234,532.0,34290,2207234.0,0:04:13,Science & Technology,Telusko,20180630
+#2 Python Tutorial for Beginners | Python Installation | PyCharm,1931088,480.0,24559,1931088.0,0:08:33,Science & Technology,Telusko,20180701
+#3 Python Tutorial for Beginners | Getting Started with Python,1859654,543.0,49110,1859654.0,00:014:49,Science & Technology,Telusko,20180702
+#4 Python Tutorial for Beginners | Variables in Python,1457633,364.0,27927,1457633.0,00:010:22,Science & Technology,Telusko,20180702
+#5 Python Tutorial for Beginners | List in Python,1350701,295.0,28060,1350701.0,00:010:42,Science & Technology,Telusko,20180703
+#6 Python Tutorial for Beginners | Tuple | Set in Python,958372,182.0,16940,958372.0,0:06:41,Science & Technology,Telusko,20180703
+Dictionary in Python,399217,107.0,6548,399217.0,00:012:24,Science & Technology,Telusko,20200128
+#7 Python Tutorial for Beginners | Python Set Path in Windows and Help,768238,186.0,10836,768238.0,0:05:53,Science & Technology,Telusko,20180704
+#8 Python Tutorial for Beginners | Python Editor | Sublime Text,505998,157.0,4989,505998.0,0:03:11,Science & Technology,Telusko,20181104
+#9 Python Tutorial for Beginners | More on Variables in Python,644143,106.0,9065,644143.0,0:09:13,Science & Technology,Telusko,20180704
+#10 Python Tutorial for Beginners | Data Types in Python,728578,197.0,11798,728578.0,00:014:35,Science & Technology,Telusko,20180705
+#11 Python Tutorial for Beginners | Operators in Python,588373,120.0,9169,588373.0,00:011:7,Science & Technology,Telusko,20180706
+#12 Python Tutorial for Beginners | Number System Conversion in Python,499288,98.0,6770,499288.0,0:08:16,Science & Technology,Telusko,20180706
+#13 Python Tutorial for Beginners | Swap 2 Variables in Python,421929,90.0,4884,421929.0,0:04:52,Science & Technology,Telusko,20181022
+Support Telusko,434330,55.0,9629,434330.0,0:01:11,Science & Technology,Telusko,20190529
+#14 Python Tutorial for Beginners | IDLE Previous Command | Clear Screen?,397241,91.0,4255,397241.0,0:02:59,Science & Technology,Telusko,20180707
+#15 Python Tutorial for Beginners | Python BitWise Operators,508532,186.0,8107,508532.0,00:012:42,Science & Technology,Telusko,20180707
+#16 Python Tutorial for Beginners | Import Math Functions in Python,501640,122.0,7938,501640.0,0:07:39,Science & Technology,Telusko,20180708
+#17 Python Tutorial for Beginners | Working with PyCharm | Run | Debug | Trace | py file,578127,186.0,10232,578127.0,00:010:26,Science & Technology,Telusko,20180709
+#18 Python Tutorial for Beginners | User input in Python | Command Line Input,643031,192.0,10641,643031.0,00:011:59,Science & Technology,Telusko,20180710
+#19 Python Tutorial for Beginners | If Elif Else Statement in Python,610659,198.0,9954,610659.0,00:015:38,Science & Technology,Telusko,20180711
+#20 Python Tutorial for Beginners | While Loop in Python,621890,227.0,10740,621890.0,00:012:43,Science & Technology,Telusko,20180711
+#21 Python Tutorial for Beginners | For Loop in Python,575053,165.0,9382,575053.0,0:07:27,Science & Technology,Telusko,20180712
+#22 Python Tutorial for Beginners | Break Continue Pass in Python,438292,127.0,5964,438292.0,00:010:20,Science & Technology,Telusko,20180714
+#22.1 Python Tutorial for Beginners | Break vs Continue vs Pass in Python part 2,225237,34.0,2910,225237.0,0:04:29,Science & Technology,Telusko,20180813
+#23 Python Tutorial for Beginners | Printing Patterns in Python,518970,187.0,7761,518970.0,0:07:56,Science & Technology,Telusko,20180715
+#24 Python Tutorial for Beginners | For Else in Python,234131,44.0,3722,234131.0,0:05:12,Science & Technology,Telusko,20190315
+#25 Python Tutorial for Beginners | Prime Number in Python,317239,116.0,4348,317239.0,0:04:11,Science & Technology,Telusko,20190315
+#26 Python Tutorial for Beginners | Array in Python,567598,205.0,7282,567598.0,00:015:57,Science & Technology,Telusko,20180718
+#27 Python Tutorial for Beginners | Array values from User in Python | Search in Array,378114,86.0,8333,378114.0,00:010:2,Science & Technology,Telusko,20180720
+#28 Python Tutorial for Beginners | Why Numpy? Installing Numpy in Pycharm,359159,116.0,4684,359159.0,0:06:58,Science & Technology,Telusko,20180720
+#29 Python Tutorial for Beginners | Ways of Creating Arrays in Numpy,288189,56.0,3418,288189.0,00:010:7,Science & Technology,Telusko,20180722
+#30 Python Tutorial for Beginners | Copying an Array in Python,238702,38.0,4519,238702.0,0:09:51,Science & Technology,Telusko,20180723
+#31 Python Tutorial for Beginners | Working with Matrix in Python,363269,132.0,5117,363269.0,00:011:55,Science & Technology,Telusko,20180723
+#32 Python Tutorial for Beginners | Functions in Python,414575,126.0,5927,414575.0,00:011:13,Science & Technology,Telusko,20180727
+#33 Python Tutorial for Beginners | Function Arguments in Python,294044,195.0,3967,294044.0,0:07:52,Science & Technology,Telusko,20180730
+#34 Python Tutorial for Beginners | Types of Arguments in Python,254749,51.0,3768,254749.0,0:09:55,Science & Technology,Telusko,20180730
+#35 Python Tutorial for Beginners | Keyworded Variable Length Arguments in Python | **kwargs,221780,45.0,4045,221780.0,0:04:52,Science & Technology,Telusko,20180801
+#36 Python Tutorial for Beginners | Global Keyword in Python | Global vs Local Variable,234605,81.0,8466,234605.0,0:08:21,Science & Technology,Telusko,20180801
+#37 Python Tutorial for Beginners | Pass List to a Function in Python,203858,58.0,3202,203858.0,0:04:19,Science & Technology,Telusko,20180802
+#38 Python Tutorial for Beginners | Fibonacci Sequence,272505,112.0,4336,272505.0,0:08:01,Science & Technology,Telusko,20190313
+#39 Python Tutorial for Beginners | Factorial,200541,72.0,2929,200541.0,0:05:11,Science & Technology,Telusko,20180802
+#40 Python Tutorial for Beginners | Recursion,244115,107.0,3728,244115.0,0:05:43,Science & Technology,Telusko,20180803
+#41 Python Tutorial for Beginners | Factorial using Recursion,184262,37.0,6125,184262.0,0:04:57,Science & Technology,Telusko,20180805
+#42 Python Tutorial for Beginners | Anonymous Functions | Lambda,229599,72.0,3830,229599.0,0:04:38,Science & Technology,Telusko,20180805
+#43 Python Tutorial for Beginners | Filter Map Reduce,253583,62.0,4550,253583.0,00:011:34,Science & Technology,Telusko,20180807
+#44 Python Tutorial for Beginners | Decorators,234798,270.0,3965,234798.0,0:07:33,Science & Technology,Telusko,20190317
+#45 Python Tutorial for Beginners | Modules,270523,119.0,6708,270523.0,0:07:20,Science & Technology,Telusko,20180811
+#46 Python Tutorial for Beginners | Special Variable __name__,222632,116.0,4812,222632.0,0:05:43,Science & Technology,Telusko,20180812
+#47 Python Tutorial for Beginners | Special Variable __name__ part 2,150782,38.0,2913,150782.0,0:07:08,Science & Technology,Telusko,20180813
+#48 Python Tutorial for Beginners | Object Oriented Programming | Introduction,209343,44.0,4272,209343.0,0:07:02,Science & Technology,Telusko,20180814
+#49 Python Tutorial for Beginners | Class and Object,349893,144.0,6107,349893.0,00:011:1,Science & Technology,Telusko,20180815
+#50 Python Tutorial for Beginners | __init__ method,293544,144.0,5020,293544.0,0:06:46,Science & Technology,Telusko,20180817
+"#51 Python Tutorial for Beginners | Constructor, Self and Comparing Objects",249462,87.0,3806,249462.0,00:011:4,Science & Technology,Telusko,20180819
+#52 Python Tutorial for Beginners | Types of Variables,165198,23.0,2474,165198.0,0:04:56,Science & Technology,Telusko,20180821
+#53 Python Tutorial for Beginners | Types of Methods,192499,89.0,3033,192499.0,00:011:38,Science & Technology,Telusko,20180824
+#54 Python Tutorial for Beginners | Inner class,152261,50.0,2195,152261.0,0:07:24,Science & Technology,Telusko,20180826
+#55 Python Tutorial for Beginners | Inheritance,174099,49.0,3176,174099.0,0:06:51,Science & Technology,Telusko,20180827
+#56 Python Tutorial for Beginners | Constructor in Inheritance,147296,21.0,2885,147296.0,0:08:28,Science & Technology,Telusko,20180828
+#57 Python Tutorial for Beginners | Introduction to Polymorphism,128636,31.0,1679,128636.0,0:01:46,Science & Technology,Telusko,20180828
+#58 Python Tutorial for Beginners | Duck Typing,163919,84.0,2354,163919.0,0:06:17,Science & Technology,Telusko,20180829
+#59 Python Tutorial for Beginners | Operator Overloading | Polymorphism,166836,79.0,2603,166836.0,00:014:29,Science & Technology,Telusko,20180906
+#60 Python Tutorial for Beginners | Method Overloading and Method Overriding,143475,43.0,2529,143475.0,00:010:17,Science & Technology,Telusko,20180907
+Abstract Class and Abstract Method in Python,86656,107.0,1667,86656.0,00:012:29,Science & Technology,Telusko,20200221
+#61 Python Tutorial for Beginners | Iterator,138843,62.0,2003,138843.0,00:010:48,Science & Technology,Telusko,20190321
+#62 Python Tutorial for Beginners | Generators,117095,73.0,1976,117095.0,0:06:11,Science & Technology,Telusko,20190324
+#63 Python Tutorial for Beginners | Exception Handling,185731,55.0,5551,185731.0,00:015:59,Science & Technology,Telusko,20180909
+#64 Python Tutorial for Beginners | MultiThreading,185182,90.0,4728,185182.0,00:014:45,Science & Technology,Telusko,20180912
+#65 Python Tutorial for Beginners | File handling,261073,129.0,4705,261073.0,00:012:14,Science & Technology,Telusko,20180916
+#66 Python Tutorial for Beginners | Comments,81101,33.0,1441,81101.0,0:03:43,Science & Technology,Telusko,20180924
+#67 Python Tutorial for Beginners | is Python Compiled or Interpreted Language?,116675,48.0,3069,116675.0,0:06:48,Science & Technology,Telusko,20180925
+#68 Python Tutorial for Beginners | Linear Search using Python,131469,43.0,2062,131469.0,0:07:17,Science & Technology,Telusko,20181015
+#69 Python Tutorial for Beginners | Binary Search Using Python,152661,70.0,2295,152661.0,0:09:22,Science & Technology,Telusko,20181020
+#70 Python Tutorial for Beginners | Bubble Sort in python | List Sort,180206,123.0,2998,180206.0,0:07:21,Science & Technology,Telusko,20181023
+#71 Python Tutorial for Beginners | Selection Sort using Python,126381,50.0,1901,126381.0,0:07:35,Science & Technology,Telusko,20181025
+#72 MySQL Workbench Setup | Python Database Connection,204794,69.0,2423,204794.0,0:08:01,Science & Technology,Telusko,20181101
+#73 Python Database Connection | MySQL,332806,157.0,3931,332806.0,0:07:42,Science & Technology,Telusko,20181104
+#74 Python | Git | PyCharm | GitHub,159600,97.0,2110,159600.0,00:010:53,Science & Technology,Telusko,20181113
+#75 Python Tutorial for Beginners |  Python GitHub Code Contribution,64916,14.0,934,64916.0,0:09:17,Science & Technology,Telusko,20181115
+Zip Function in Python,43073,17.0,1123,43073.0,0:03:51,Science & Technology,Telusko,20200220
+Socket Programming Using Python,82732,42.0,2137,82732.0,00:017:7,Science & Technology,Telusko,20200130
+#76 Python Tutorial for Beginners |  Anaconda Setup,80722,30.0,980,80722.0,0:07:31,Science & Technology,Telusko,20181219
+#77 Python Tutorial for Beginners |  Jupyter Notebook Setup,84289,23.0,862,84289.0,0:07:19,Science & Technology,Telusko,20181220
+What after Python?,270629,142.0,10261,270629.0,0:05:41,Science & Technology,Telusko,20190219
+#1 Django tutorials | What is Django? | Python Web Framework,474392,149.0,6388,474392.0,0:05:13,Science & Technology,Telusko,20190426
+#2 Django tutorials | Setup,342872,103.0,4820,342872.0,00:011:16,Science & Technology,Telusko,20190502
+#3 Django tutorials | First App in Django - part 1,307399,107.0,3005,307399.0,0:08:25,Science & Technology,Telusko,20190508
+#4 Django tutorials | First App Django - part 2,199927,73.0,1810,199927.0,0:07:54,Science & Technology,Telusko,20190509
+#5 Django tutorials | Django Template Language | DTL,138910,31.0,1656,138910.0,0:08:45,Science & Technology,Telusko,20190511
+#6 Django tutorials | Django Template Language - part 2,92090,17.0,932,92090.0,0:04:00,Science & Technology,Telusko,20190512
+#7 Django tutorials | Addition of Two Numbers in Django,98375,30.0,1168,98375.0,0:08:22,Science & Technology,Telusko,20190513
+#8 Django tutorials | GET vs POST | HTTP Methods,84371,23.0,1275,84371.0,0:06:07,Science & Technology,Telusko,20190514
+#9 Django tutorials | Model View Template in Django | MVT,76047,20.0,1508,76047.0,0:05:54,Science & Technology,Telusko,20190604
+#10 Django tutorials | Static Files - 1,107421,64.0,1131,107421.0,0:07:31,Science & Technology,Telusko,20190516
+#11 Django tutorials | Static Files - 2,96564,41.0,1337,96564.0,00:010:2,Science & Technology,Telusko,20190517
+#12 Django tutorials | Passing Dynamic Data in Html part 1,79463,12.0,922,79463.0,00:010:56,Science & Technology,Telusko,20190519
+#13 Django tutorials | Passing Dynamic Data in Html - part 2,55816,7.0,768,55816.0,0:09:56,Science & Technology,Telusko,20190520
+#14 Django tutorials | If Statement,43922,8.0,605,43922.0,0:05:30,Science & Technology,Telusko,20190522
+#15 Django tutorials | ORM | Object Relational Mapper | Theory,63636,13.0,1383,63636.0,0:04:41,Science & Technology,Telusko,20190523
+#16 Django tutorials | Postgres and PgAdmin Setup,81449,25.0,844,81449.0,0:05:06,Science & Technology,Telusko,20190522
+#17 Django tutorials | Models and Migrations,96022,22.0,1034,96022.0,00:012:13,Science & Technology,Telusko,20190524
+#18 Django tutorials | Re-Migration,47759,4.0,505,47759.0,0:02:57,Science & Technology,Telusko,20190524
+#19 Django tutorials | Admin Panel,64765,10.0,837,64765.0,0:06:26,Science & Technology,Telusko,20190525
+#20 Django tutorials | Add and Fetch data from Database,92738,26.0,965,92738.0,0:09:13,Science & Technology,Telusko,20190525
+#21 Django tutorials | User Registration - 1,114085,41.0,1106,114085.0,00:013:45,Science & Technology,Telusko,20190531
+#22 Django tutorials | User Registration - 2,76337,10.0,789,76337.0,00:010:20,Science & Technology,Telusko,20190531
+#23 Django tutorials | Passing Messages,53372,14.0,587,53372.0,0:06:45,Science & Technology,Telusko,20190601
+#24 Django tutorials | User login,82511,22.0,900,82511.0,0:08:13,Science & Technology,Telusko,20190602
+#25 Django Tutorials | User Logout,69755,15.0,1288,69755.0,0:05:26,Science & Technology,Telusko,20190603
+Nito - Calm,189675,24.0,7550,189675.0,0:02:10,People & Blogs,Ichika Nito,20190612
+Nito - Journey,325909,41.0,12061,325909.0,00:011:47,Music,Ichika Nito,20190623
+Ichika Nito - i miss you,1546575,224.0,82741,1546575.0,0:01:57,Music,Ichika Nito,20190707
+Nito - feelings fade,163084,25.0,6460,163084.0,0:02:32,Music,Ichika Nito,20190714
+Nito - shinobi,486831,124.0,28391,486831.0,0:01:29,Music,Ichika Nito,20191111
+Ichika Nito - N I T O (Full EP),464366,57.0,22327,464366.0,0:09:30,Music,Ichika Nito,20200416
+Qualm,104585,26.0,7519,104585.0,0:02:16,Music,Ichika Nito,20200506
+Ichika Nito - Homesick,816160,159.0,50695,816160.0,0:02:25,Music,Ichika Nito,20200415
+Ichika Nito - Orb (Official Music Video),774311,116.0,41294,774311.0,0:03:14,Music,Ichika Nito,20200323
+Ichika Nito - Ethereal Feel (Official Music Video),293445,77.0,24262,293445.0,0:01:26,Music,Ichika Nito,20200402
+Ichika Nito - Solitude,228595,53.0,24442,228595.0,0:01:56,Music,Ichika Nito,20201024
+Ichika Nito - Isolation,316362,67.0,24868,316362.0,0:02:34,Music,Ichika Nito,20200726
+Ichika Nito - Branching Paths (Official Music Video),283532,90.0,24662,283532.0,0:02:17,Music,Ichika Nito,20200707
+[No Copyright Music] Woods - Acoustic Folk | Background Music,330296,19.0,4203,330296.0,0:02:44,Music,Oak Studios,20190525
+[No Copyright Music] Into The Light - Chill Acoustic Guitar | Background Music,189029,11.0,2578,189029.0,0:04:45,Music,Oak Studios,20200507
+[No Copyright Music] Eventide - Nostalgic Acoustic Guitar | Background Music,56578,7.0,398,56578.0,0:02:54,Music,Oak Studios,20200611
+[Royalty Free Music] #4 - Soft Acoustic | Inspiring Background Music,26318,2.0,196,26318.0,0:02:51,Music,Oak Studios,20200818
+[No Copyright Music] Every Little Thing - Relaxing Acoustic Folk | Background Music,39611,0.0,567,39611.0,0:03:15,Music,Oak Studios,20200713
+[No Copyright Music] The Play - Acoustic Version | Guitar & Bass Melancholic Background Music,8430,0.0,114,8430.0,0:02:44,Music,Oak Studios,20201025
+[No Copyright Music] Freedom - Acoustic Upbeat Music,48680,0.0,571,48680.0,0:02:59,Music,Oak Studios,20200522
+[No Copyright Music] Run - Energic Indie Guitar | Background Music,17226,2.0,207,17226.0,0:03:35,Music,Oak Studios,20200911
+[No Copyright Music] Someday - Acoustic Folk | Background Music,123554,9.0,1221,123554.0,0:02:49,Music,Oak Studios,20181130
+[No Copyright Music] May Song - Slow Acoustic Folk | Background Music,61551,9.0,635,61551.0,0:02:13,Music,Oak Studios,20200504
+[No Copyright Music] Chill Acoustic | Free Background Music,142275,11.0,1636,142275.0,0:02:53,Music,Oak Studios,20180312
+[No Copyright Music] Waves - Chill Lofi Guitar,13035,2.0,263,13035.0,0:03:56,Music,Oak Studios,20200926
+[No Copyright Music] Summer Vibes - Chill Out Guitar,6923,0.0,140,6923.0,0:03:14,Music,Oak Studios,20201031
+[No Copyright Music] West Lake - Ambient Guitar #1,3606,0.0,98,3606.0,0:04:02,Music,Oak Studios,20201120
+[No Copyright Music] Chilling - Lofi Guitar,1271,0.0,74,1271.0,0:04:13,Music,Oak Studios,20201207
+"Maruti Suzuki Vitara Brezza test drive,interior & exterior-full review",1909,0.0,6,1909.0,0:01:25,Autos & Vehicles,StudentsFM,20160419
+pete's super sunday,253,29.0,4,253.0,0:06:44,Music,StudentsFM,20160416
+Renault Kwid chrome,1421,2.0,9,1421.0,0:00:29,Music,StudentsFM,20151025
+Renault Kwid features and real user review(Honest Review),2558,0.0,15,2558.0,0:00:43,Music,StudentsFM,20151021
+Renault KWID - India has a new favourite car,5168,2.0,13,5168.0,0:00:30,Music,StudentsFM,20151017
+Toyota Innova CRYSTA 2016 vs INNOVA 2015  Specs comparison,3166,7.0,20,3166.0,0:04:49,Comedy,StudentsFM,20160502
+Honda BR-V Latest Review,1935,2.0,9,1935.0,0:05:13,Entertainment,StudentsFM,20160518
+honda navi review,6068,4.0,30,6068.0,0:02:52,Entertainment,StudentsFM,20160627
+Renault Captur Full view and Customization( must watch this),194,0.0,5,194.0,0:02:34,Autos & Vehicles,StudentsFM,20171226
+Funny Bus Driving in classroom,16198,24.0,94,16198.0,0:00:35,Comedy,StudentsFM,20160502
+9 Luxury Cars that will Dominate the Roads in 2017 | Top Luxury Cars 2017 | new luxury cars 2017,27,0.0,0,27.0,0:05:36,Autos & Vehicles,Check Facts 360,20170410
+8 Electric Vehicles That Are Hitting The Road By 2020 | Electric Car Technology,166,2.0,2,166.0,0:04:21,News & Politics,Check Facts 360,20170423
+F1: Best images from 2017 Bahrain GP | Bahrain Grand Prix 2017 | Formula 1 Pictures,60,0.0,0,60.0,0:05:16,Sports,Check Facts 360,20170423
+Renault conceptualizes F1 cars in 2027 | A glimpse into the future of F1? | Future F1,41,2.0,0,41.0,0:02:56,Sports,Check Facts 360,20170426
+Still Fabulous at 50: 12 Stylish Sports Cars that have aged Beautifully | Best Classic Sports Cars,79,0.0,0,79.0,0:03:48,Sports,Check Facts 360,20170426
+Shiki-shima: Japan launches new luxury train service |  World's most luxurious train,3111,2.0,10,3111.0,0:03:09,Travel & Events,Check Facts 360,20170513
+Most Fuel-Efficient Cars | Best fuel efficient cars | Best American Cars,276,2.0,3,276.0,00:018:35,Autos & Vehicles,Check Facts 360,20170529
+20 Insanely Fast Cars You’ll Find in A-Listers’ Garages | List of Sports Cars 2017,11,0.0,0,11.0,00:011:12,Autos & Vehicles,Check Facts 360,20170531
+Best Fuel Efficient Trucks 2017: Which Pickup Trucks Have the Best Fuel Economy?,18884,50.0,77,18884.0,00:011:6,Autos & Vehicles,Check Facts 360,20170531
+Best SUV 2017: Top 10 SUV Models Burning up the Road Right Now | top 10 luxury suv,92,0.0,0,92.0,00:011:49,Autos & Vehicles,Check Facts 360,20170612
+Pickup Trucks Cool Features,219,0.0,3,219.0,00:010:15,Autos & Vehicles,Check Facts 360,20170621
+11 Best Electric Cars Available Today: The list of available all electric vehicles,81,0.0,0,81.0,0:09:49,Autos & Vehicles,Check Facts 360,20170704
+The Most Luxurious Minivans You Can Buy,9827,23.0,31,9827.0,00:011:43,Autos & Vehicles,Check Facts 360,20170730
+The Motorcycle: 10 Perfect Options for Cruising the Open Road | Best Life,75,0.0,0,75.0,00:012:29,Autos & Vehicles,Check Facts 360,20170730
+Concept Cars of the Future: 7 Radical Concept Cars Conceived by Industry Outsiders,31,0.0,0,31.0,0:05:18,Autos & Vehicles,Check Facts 360,20170804
+The 6 Best Hatchbacks on Sale in 2017,8,2.0,0,8.0,0:04:31,Autos & Vehicles,Check Facts 360,20170810
+10 Drool-Worthy New High-Performance Trucks | New Challengers,42,0.0,0,42.0,00:011:52,Autos & Vehicles,Check Facts 360,20170812
+"Dream Cars Under $40,000 | Best Car Deals",21,0.0,0,21.0,00:010:19,Autos & Vehicles,Check Facts 360,20170814
+The Coolest Cars of the 1970s | Best cars in the world,356,0.0,3,356.0,0:08:12,Autos & Vehicles,Check Facts 360,20170817
+Future Cars! 2018 and Beyond | 2018 cars worth waiting for,195,0.0,2,195.0,00:040:51,Autos & Vehicles,Check Facts 360,20170818
+Hot Rods Shine at 30th Pacific Northwest Nationals,67,0.0,0,67.0,00:016:15,Entertainment,Check Facts 360,20170820
+2017 Ford Focus vs. 2017 Ford Fiesta: Which of Ford’s Small Cars Is Right for You?,2359,10.0,5,2359.0,00:010:39,Autos & Vehicles,Check Facts 360,20170821
+Small Cars You Actually Want,12,0.0,0,12.0,00:012:48,Autos & Vehicles,Check Facts 360,20170828
+The Best New Cars To Hit the Road In 2018 | Best Life,8,0.0,0,8.0,00:010:10,Autos & Vehicles,Check Facts 360,20170831
+More than $325 Million Sold at 2017 Monterey Car Auctions,1583,2.0,11,1583.0,00:020:20,Autos & Vehicles,Check Facts 360,20170831
+Truck Extremes: Base vs. Best | Best selling vehicle in America,27,0.0,2,27.0,00:023:5,Autos & Vehicles,Check Facts 360,20170903
+Toyota Land Cruiser 2018,142,0.0,3,142.0,0:04:32,Autos & Vehicles,Check Facts 360,20170913
+Tesla is set to reveal its first electric big-rig truck in October — here's everything we know,626,2.0,2,626.0,0:05:08,Autos & Vehicles,Check Facts 360,20170919
+10 Things to Do When Shopping for a Used Car | Best Way to Buy a Used Car,13,0.0,2,13.0,0:09:09,Autos & Vehicles,Check Facts 360,20170920
+2017 Frankfurt Motor Show: Versatile Vans,16,0.0,0,16.0,0:09:47,Autos & Vehicles,Check Facts 360,20170923
+What Makes the 2017 Honda Civic Si So Ex-Si-ting?,286,2.0,2,286.0,0:06:30,Autos & Vehicles,Check Facts 360,20170927
+All-New 2018 Honda Accord: Worth Waiting For?,329,2.0,2,329.0,0:09:26,Autos & Vehicles,Check Facts 360,20171002
+"Humans will be BANNED from driving cars within the next 25 years, expert claims",206,5.0,2,206.0,0:04:13,Science & Technology,Check Facts 360,20171009
+14 New Cars That Make Crazy Horsepower Per Liter,81,0.0,0,81.0,0:07:02,Autos & Vehicles,Check Facts 360,20171010
+America’s favorite classic Jeeps,225,0.0,3,225.0,00:013:11,Autos & Vehicles,Check Facts 360,20171010
+9 Best Bargain Sports Sedans | Family Sedans That Bring the Speed,16,0.0,0,16.0,00:010:2,Autos & Vehicles,Check Facts 360,20171012
+7 discontinued cars that aren't dead yet,382,2.0,6,382.0,0:05:38,Autos & Vehicles,Check Facts 360,20171017
+"2018 ForbesLife Luxury Car Guide: Game-Changing Sports Cars, SUVS and Sedans",22,0.0,0,22.0,00:012:12,Autos & Vehicles,Check Facts 360,20171018
+10 Most Reliable Cars,77,0.0,0,77.0,00:011:4,Autos & Vehicles,Check Facts 360,20171020
+Consumer Reports: 10 Least Reliable Cars,122,2.0,2,122.0,00:011:58,Autos & Vehicles,Check Facts 360,20171021
+What is the best suv to buy: Top 10 Most Powerful SUVs for 2018,4674,2.0,21,4674.0,0:09:18,Autos & Vehicles,Check Facts 360,20171021
+The Most Beautiful Ferraris Ever Made,1405,5.0,7,1405.0,0:03:11,Autos & Vehicles,Check Facts 360,20171021
+The Top 10 Most Expensive Pickup Trucks in the World,883,4.0,9,883.0,00:010:27,Autos & Vehicles,Check Facts 360,20171021
+2017 Tokyo Motor Show: Honda Concepts,61,0.0,2,61.0,0:05:30,Autos & Vehicles,Check Facts 360,20171027
+Best of 2017 Tokyo Motor Show Concepts,50,0.0,0,50.0,0:03:31,Autos & Vehicles,Check Facts 360,20171103
+Radical Concept Cars at the 2017 Tokyo Motor Show,80,0.0,0,80.0,00:010:56,Autos & Vehicles,Check Facts 360,20171103
+Here Are 12 Perfect Cars for City Driving,34,0.0,0,34.0,0:05:16,Autos & Vehicles,Check Facts 360,20171120
+Nine Highlights of the Dubai Motor Show 2017,3874,2.0,22,3874.0,0:06:36,Autos & Vehicles,Check Facts 360,20171120
+"Best Cars you can buy for $30,000",41,0.0,0,41.0,0:07:49,Autos & Vehicles,Check Facts 360,20171123
+9 Alternatives to the 2018 Honda Odyssey,243,3.0,2,243.0,0:08:53,Autos & Vehicles,Check Facts 360,20171126
+2017 Los Angeles Auto Show: Biggest Debuts | New Car Models 2018 | Car Shows 2017,47,0.0,0,47.0,00:011:5,Autos & Vehicles,Check Facts 360,20171203
+The 2018 Ford Mustang Is a Muscle Car to Be Thankful For | 2018 Ford Mustang GT Specs,204,0.0,2,204.0,0:09:48,Autos & Vehicles,Check Facts 360,20171203
+2017 Airstream Basecamp Review | Travel Trailer Reviews,13103,60.0,46,13103.0,00:013:8,Autos & Vehicles,Check Facts 360,20171207
+10 New Cars That Are Instant Collectibles | Future Classic Cars to Buy Now,534,2.0,3,534.0,00:012:7,Autos & Vehicles,Check Facts 360,20171207
+Top 12 Safest Midsize SUVs for Your Family,258,0.0,2,258.0,0:09:16,Autos & Vehicles,Check Facts 360,20171208
+The hottest new family cars for 2018,35,0.0,0,35.0,00:013:37,Autos & Vehicles,Check Facts 360,20171211
+Top 10 Sports Cars 2017 | List of Sports Cars | Top Cars 2017,282,0.0,2,282.0,0:09:28,Autos & Vehicles,Check Facts 360,20171211
+14 Family Cars That Are Genuinely Fun to Drive,159,0.0,0,159.0,0:05:41,Autos & Vehicles,Check Facts 360,20171215
+The Ten Best Motorcycles 2017 | Top Motorcycles,234,0.0,2,234.0,0:08:51,Autos & Vehicles,Check Facts 360,20171216
+11 Unreliable Classic Cars We Can't Help but Love,53,0.0,0,53.0,0:05:17,Autos & Vehicles,Check Facts 360,20171217
+Top 10 Best SUV Leases right now in December 2017,1863,3.0,3,1863.0,00:010:29,Autos & Vehicles,Check Facts 360,20171219
+"Best Cars, Trucks, and SUVs We Drove in 2017",24,0.0,0,24.0,00:017:9,Autos & Vehicles,Check Facts 360,20171219
+11 Cars that Are Better Without a Manual Gearbox | Auto Gear Cars,57,0.0,0,57.0,0:06:14,Autos & Vehicles,Check Facts 360,20171220
+Best new midsize cars for 2018,65,0.0,0,65.0,00:017:55,Autos & Vehicles,Check Facts 360,20171223
+Jeep Things: What to Know About the All-New 2018 Wrangler,486,0.0,6,486.0,0:09:09,Autos & Vehicles,Check Facts 360,20171223
+Top 10 Luxury Sports Cars | The Best Luxury Sports Cars on the Market,153,0.0,2,153.0,00:010:6,Autos & Vehicles,Check Facts 360,20171225
+All-New Tesla Roadster: What You Need to Know,209,2.0,2,209.0,0:08:25,Autos & Vehicles,Check Facts 360,20171228
+Top 10 Best Passenger Vans,43433,59.0,151,43433.0,00:010:3,Autos & Vehicles,Check Facts 360,20180102
+10 Awesome Cars We Don't Get in America,103,0.0,0,103.0,0:05:30,Autos & Vehicles,Check Facts 360,20180108
+Future groundbreakers: The cars that will do it first | New Technology for Future,90,0.0,0,90.0,00:015:7,Autos & Vehicles,Check Facts 360,20180116
+America’s Most Popular Luxury Vehicles 2017 vs 2016,52,0.0,0,52.0,00:019:46,Autos & Vehicles,Check Facts 360,20180121
+All-New 2018 Range Rover SV Coupe: What You Need to Know,919,0.0,11,919.0,0:07:45,Autos & Vehicles,Check Facts 360,20180324
+Top 25 Cheapest Cars to Insure,3446,17.0,27,3446.0,00:011:59,Autos & Vehicles,Check Facts 360,20180523
+Top 25 Most Expensive Cars to Insure,399,2.0,2,399.0,00:011:43,Autos & Vehicles,Check Facts 360,20180529
+How to Wash Your Car like a Professional,165,0.0,3,165.0,00:015:2,Travel & Events,Check Facts 360,20180616
+Top 10 Most Important Chrysler Vehicles,81,2.0,2,81.0,00:012:37,Travel & Events,Check Facts 360,20180626
+Golden Arrow: Nissan GT-R50 by Italdesign |  Nissan’s 50th-Anniversary GT-R,5835,6.0,53,5835.0,0:06:09,Travel & Events,Check Facts 360,20180630
+10 Cars That Only Had Three Wheels,648,0.0,10,648.0,0:06:59,Travel & Events,Check Facts 360,20180708
+Top 25 Best Selling SUVs in America — First Half 2018 | List 25,2737,6.0,18,2737.0,00:034:26,Autos & Vehicles,Check Facts 360,20180721
+18 Future Classics You'll See at Monterey Car Week in 2043,179,0.0,4,179.0,00:013:14,Autos & Vehicles,Check Facts 360,20180921
+23 things car dealerships don't want you to know | Top List 2019,479,0.0,5,479.0,00:013:32,Autos & Vehicles,Check Facts 360,20190404
+You Might Be A Veteran If... Part 2,2201170,807.0,62699,2201170.0,0:03:40,Entertainment,Black Rifle Coffee Company,20200501
+If Veterans Were In Horror Movies 2,5576832,2482.0,177509,5576832.0,0:07:58,Entertainment,MBest11x,20191025
+How to Everyday Carry,5737808,3630.0,125037,5737808.0,0:03:07,Entertainment,Black Rifle Coffee Company,20190519
+Horror Film Survival Tactics with Black Rifle Coffee,1758347,483.0,41084,1758347.0,0:01:30,People & Blogs,Black Rifle Coffee Company,20171031
+Sh*t Military Members Don't Say,1943603,1102.0,68425,1943603.0,0:02:41,Entertainment,Black Rifle Coffee Company,20191111
+Banned Black Rifle Coffee Commercial,1358329,549.0,32964,1358329.0,0:00:45,People & Blogs,Black Rifle Coffee Company,20170928
+Sh*t F!rearm Owners Don't Say,2104155,1241.0,77860,2104155.0,0:01:42,Entertainment,Black Rifle Coffee Company,20200117
+Christmas Eve One-Upper,1601859,808.0,48196,1601859.0,0:01:53,Entertainment,Black Rifle Coffee Company,20191224
+When Military Veterans Run Out of Coffee,813450,157.0,19181,813450.0,0:05:31,Entertainment,Black Rifle Coffee Company,20191129
+Office Operator,899541,218.0,24046,899541.0,0:00:54,People & Blogs,Black Rifle Coffee Company,20170330
+Better Ways to Wake Up,1625661,934.0,42360,1625661.0,0:01:08,Entertainment,Black Rifle Coffee Company,20200322
+GYM MOTIVATION - The Perfect Workout Partner,742623,238.0,8079,742623.0,0:00:48,Howto & Style,Black Rifle Coffee Company,20180813
+There Are Better Ways To Wake Up,533657,76.0,10360,533657.0,0:00:41,Entertainment,Black Rifle Coffee Company,20190602
+We Own The Night,423262,84.0,20239,423262.0,0:00:59,Entertainment,Black Rifle Coffee Company,20190607
+Happy Birthday America!,311413,80.0,13909,311413.0,0:01:01,Entertainment,Black Rifle Coffee Company,20190703
+Explosive Ordnance Disposal,247263,13.0,3000,247263.0,0:00:49,Howto & Style,Black Rifle Coffee Company,20180611
+Inside the Crib - Behind the Scenes of Instructor Earl,220932,61.0,6163,220932.0,00:011:11,Entertainment,Black Rifle Coffee Company,20190121
+When You Ask a Gun Owner for Protection,2615082,897.0,43082,2615082.0,0:00:56,Entertainment,Black Rifle Coffee Company,20200605
+Star Spangled STEEL,1265710,353.0,67398,1265710.0,0:02:38,Entertainment,Black Rifle Coffee Company,20200703
+When You Feel Like a Morning Goddess,519043,294.0,20649,519043.0,0:00:40,Entertainment,Black Rifle Coffee Company,20201009
+There are Better Ways to Wake Up (Chainsaw edition),526395,181.0,17373,526395.0,0:01:01,Entertainment,Black Rifle Coffee Company,20201026

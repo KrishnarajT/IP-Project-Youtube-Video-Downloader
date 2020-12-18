@@ -2,11 +2,10 @@
 This file is used to define functions that are going to take in a youtube object, and then write the data onto files.
 """
 # import pytube as pt
-import youtube_dl
-ydl_opts = {}
+import youtube_dl, pandas as pd, numpy as np
 
 
-
+ydl_opts = { }
 
 def conv_len( length ) :
     print( length )
@@ -35,156 +34,239 @@ def conv_len( length ) :
             vid_len = str( hours ) + ':' + str( minutes ) + ':' + str( seconds )
         
         return vid_len
-    
-def get_data():
-    video = pt.YouTube('https://www.youtube.com/watch?v=8kooIgKESYE')
-    # video = pt.YouTube('https://www.youtube.com/watch?v=KRaWnd3LJfs')
-    print(video.title)
-    print(video.author)
-    print(video.thumbnail_url)
-    print(video.watch_url)
-    print(video.age_restricted)
-    print(video.rating)
-    print(video.length)
-    #print(video.streams)
-    print(video.captions)
-    print(video.description)
-    print(video.caption_tracks)
-    print(video.publish_date)
-    print(video.views)
 
-class write:
+class write :
     @staticmethod
-    def add_to_data(video):
-        new_entry = True
-        print('data writing')
+    def add_to_data( video, url ) :
+        print( 'data writing' )
         # getting likes and dislikes via youtube-dl
-        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        with youtube_dl.YoutubeDL( ydl_opts ) as ydl :
             meta = ydl.extract_info(
-                    'https://www.youtube.com/watch?v=9bZkp7q19f0', download=False)
-            video_likes = meta['like_count']
-            video_dislikes = meta['dislike_count']
-            video_category = meta['categories'][0]
-            video_date = meta['upload_date']
-        with open('data/Video titles.txt', 'a') as fout:
+                    url, download = False )
+            video_likes = meta[ 'like_count' ]
+            video_dislikes = meta[ 'dislike_count' ]
+            video_category = meta[ 'categories' ][ 0 ]
+            video_date = meta[ 'upload_date' ]
+        with open( 'data/Video titles.txt', 'a' ) as fout :
             with open( 'data/Video titles.txt', 'r' ) as fin :
                 video_titles = fin.readlines()
-            if video.title + '\n' not in video_titles:
+            if video.title + '\n' not in video_titles :
                 new_entry = True
-                fout.write(video.title + '\n')
-                length = conv_len(video.length)
-            else: new_entry = False
-            
-        if new_entry:
-            with open('data/Video lengths.txt', 'a') as fout:
+                fout.write( video.title + '\n' )
+                length = conv_len( video.length )
+            else :
+                new_entry = False
+        
+        if new_entry :
+            with open( 'data/Video lengths.txt', 'a' ) as fout :
                 with open( 'data/Video lengths.txt', 'r' ) as fin :
-                    fout.write(length + '\n')
-            with open('data/Video views.txt', 'a') as fout:
+                    fout.write( length + '\n' )
+            with open( 'data/Video views.txt', 'a' ) as fout :
                 with open( 'data/Video views.txt', 'r' ) as fin :
-                    fout.write(video.views.__str__() + '\n')
-            with open('data/Video likes.txt', 'a') as fout:
+                    fout.write( video.views.__str__() + '\n' )
+            with open( 'data/Video likes.txt', 'a' ) as fout :
                 with open( 'data/Video likes.txt', 'r' ) as fin :
-                    fout.write(video_likes.__str__() + '\n')
-            with open('data/Video dislikes.txt', 'a') as fout:
+                    fout.write( video_likes.__str__() + '\n' )
+            with open( 'data/Video dislikes.txt', 'a' ) as fout :
                 with open( 'data/Video dislikes.txt', 'r' ) as fin :
-                    fout.write(video_dislikes.__str__() + '\n')
-            with open('data/Video authors.txt', 'a') as fout:
+                    fout.write( video_dislikes.__str__() + '\n' )
+            with open( 'data/Video authors.txt', 'a' ) as fout :
                 with open( 'data/Video authors.txt', 'r' ) as fin :
-                    fout.write(video.author + '\n')
-            with open('data/Video ratings.txt', 'a') as fout:
+                    fout.write( video.author + '\n' )
+            with open( 'data/Video ratings.txt', 'a' ) as fout :
                 with open( 'data/Video ratings.txt', 'r' ) as fin :
-                    fout.write(video.rating.__str__() + '\n')
-            with open('data/Video publish_dates.txt', 'a') as fout:
+                    fout.write( video.rating.__str__() + '\n' )
+            with open( 'data/Video publish_dates.txt', 'a' ) as fout :
                 with open( 'data/Video publish_dates.txt', 'r' ) as fin :
-                    fout.write(video_date.__str__() + '\n')
-            with open('data/Video categories.txt', 'a') as fout:
+                    fout.write( video_date.__str__() + '\n' )
+            with open( 'data/Video categories.txt', 'a' ) as fout :
                 with open( 'data/Video categories.txt', 'r' ) as fin :
-                    fout.write(video_category.__str__() + '\n')
-      
+                    fout.write( video_category.__str__() + '\n' )
+    
     @staticmethod
-    def add_to_data_playlist(video):
-        for i, item in enumerate(video):
+    def add_to_data_playlist( video ) :
+        for i, item in enumerate( video ) :
             new_entry = True
-            single_vid_title = video[i]['title']
-            with open('data/Video titles.txt', 'a') as fout:
+            single_vid_title = video[ i ][ 'title' ]
+            with open( 'data/Video titles.txt', 'a' ) as fout :
                 with open( 'data/Video titles.txt', 'r' ) as fin :
                     video_titles = fin.readlines()
-                if single_vid_title + '\n' not in video_titles:
+                if single_vid_title + '\n' not in video_titles :
                     new_entry = True
-                    fout.write(single_vid_title + '\n')
-                else: new_entry = False
-
-            if new_entry:
-                with open('data/Video lengths.txt', 'a') as fout:
+                    fout.write( single_vid_title + '\n' )
+                else :
+                    new_entry = False
+            
+            if new_entry :
+                with open( 'data/Video lengths.txt', 'a' ) as fout :
                     with open( 'data/Video lengths.txt', 'r' ) as fin :
-                        fout.write(conv_len(int(video[i]['duration'])) + '\n')
-                with open('data/Video views.txt', 'a') as fout:
+                        fout.write( conv_len( int( video[ i ][ 'duration' ] ) ) + '\n' )
+                with open( 'data/Video views.txt', 'a' ) as fout :
                     with open( 'data/Video views.txt', 'r' ) as fin :
-                        fout.write(video[i]['view_count'].__str__() + '\n')
-                with open('data/Video likes.txt', 'a') as fout:
+                        fout.write( video[ i ][ 'view_count' ].__str__() + '\n' )
+                with open( 'data/Video likes.txt', 'a' ) as fout :
                     with open( 'data/Video likes.txt', 'r' ) as fin :
-                        fout.write(video[i]['like_count'].__str__() + '\n')
-                with open('data/Video dislikes.txt', 'a') as fout:
+                        fout.write( video[ i ][ 'like_count' ].__str__() + '\n' )
+                with open( 'data/Video dislikes.txt', 'a' ) as fout :
                     with open( 'data/Video dislikes.txt', 'r' ) as fin :
-                        fout.write(video[i]['dislike_count'].__str__() + '\n')
-                with open('data/Video authors.txt', 'a') as fout:
+                        fout.write( video[ i ][ 'dislike_count' ].__str__() + '\n' )
+                with open( 'data/Video authors.txt', 'a' ) as fout :
                     with open( 'data/Video authors.txt', 'r' ) as fin :
-                        fout.write(video[i]['uploader'] + '\n')
-                with open('data/Video ratings.txt', 'a') as fout:
+                        fout.write( video[ i ][ 'uploader' ] + '\n' )
+                with open( 'data/Video ratings.txt', 'a' ) as fout :
                     with open( 'data/Video ratings.txt', 'r' ) as fin :
-                        fout.write(video[i]['average_rating'].__str__() + '\n')
-                with open('data/Video publish_dates.txt', 'a') as fout:
+                        fout.write( video[ i ][ 'average_rating' ].__str__() + '\n' )
+                with open( 'data/Video publish_dates.txt', 'a' ) as fout :
                     with open( 'data/Video publish_dates.txt', 'r' ) as fin :
-                        fout.write(video[i]['upload_date'].__str__() + '\n')
-                with open('data/Video categories.txt', 'a') as fout:
+                        fout.write( video[ i ][ 'upload_date' ].__str__() + '\n' )
+                with open( 'data/Video categories.txt', 'a' ) as fout :
                     with open( 'data/Video categories.txt', 'r' ) as fin :
-                        fout.write(video[i]['categories'][0].__str__() + '\n')
-                print('done lol')
+                        fout.write( video[ i ][ 'categories' ][ 0 ].__str__() + '\n' )
+                print( 'done lol' )
+    
+    @staticmethod
+    def add_to_data_csv( video, url ) :
         
+        with youtube_dl.YoutubeDL( ydl_opts ) as ydl :
+            meta = ydl.extract_info(
+                    url, download = False )
+            video_likes = meta[ 'like_count' ]
+            video_dislikes = meta[ 'dislike_count' ]
+            video_category = meta[ 'categories' ][ 0 ]
+            video_date = meta[ 'upload_date' ]
+        new_entry = True
+        
+        initial = read.get_df_from_csv()
+        titles = initial[ 'video_title' ]
+        print( titles )
+        print( type( titles ) )
+        for i in range( len( titles ) ) :
+            if video.title == titles[ i ] :
+                new_entry = False
+                break
+        
+        if new_entry :
+            data = {
+                'video_title' : pd.Series( [ video.title ], index = [ 0 ] ),
+                'video_views' : pd.Series( [ video.views ], index = [ 0 ] ),
+                'video_dislikes' : pd.Series( [ video_likes ], index = [ 0 ] ),
+                'video_likes' : pd.Series( [ video_dislikes ], index = [ 0 ] ),
+                'video_rating' : pd.Series( [ video.rating ], index = [ 0 ] ),
+                'video_length' : pd.Series( [ conv_len( video.length ) ], index = [ 0 ] ),
+                'video_category' : pd.Series( [ video_category ], index = [ 0 ] ),
+                'video_author' : pd.Series( [ video.author ], index = [ 0 ] ),
+                'video_publish_date' : pd.Series( [ video_date ], index = [ 0 ] ),
+            }
+            print( data )
+            df = pd.DataFrame( data )
+            print( '__________________________' )
+            print( df )
+            print( initial )
+            df = pd.concat( [ initial, df ], ignore_index = True )
+            print( df )
+            df.to_csv( 'Data/video_data.csv', index = False )
+        else :
+            print( 'its already written' )
+    
+    @staticmethod
+    def add_playlist_to_csv( video, number ) :
+        video_titles = [ ]
+        video_ratings = [ ]
+        video_categories = [ ]
+        video_publish_dates = [ ]
+        video_authors = [ ]
+        video_likes = [ ]
+        video_dislikes = [ ]
+        video_views = [ ]
+        video_lengths = [ ]
+        
+        initial = read.get_df_from_csv()
+        for i, item in enumerate( video ) :
+            new_entry = True
+            single_vid_title = video[ i ][ 'title' ]
+            titles = initial[ 'video_title' ]
+            print( titles )
+            # Check if the video already exists.
+            for j in range( len( titles ) ) :
+                if single_vid_title == titles[ j ] :
+                    print( 'playlist already added before.' )
+                    return
+            
+            video_titles.append( video[ i ][ 'title' ] )
+            video_ratings.append( video[ i ][ 'average_rating' ] )
+            video_categories.append( video[ i ][ 'categories' ] )
+            video_publish_dates.append( video[ i ][ 'upload_date' ] )
+            video_authors.append( video[ i ][ 'uploader' ] )
+            video_likes.append( video[ i ][ 'like_count' ] )
+            video_dislikes.append( video[ i ][ 'dislike_count' ] )
+            video_views.append( video[ i ][ 'view_count' ] )
+            video_lengths.append( conv_len( int( video[ i ][ 'duration' ] ) ) )
+        
+        data = {
+            'video_title' : pd.Series(  video_titles , index = np.arange(number) ),
+            'video_views' : pd.Series(  video_views , index = np.arange(number) ),
+            'video_dislikes' : pd.Series( video_dislikes , index = np.arange(number) ),
+            'video_likes' : pd.Series( video_likes , index = np.arange(number) ),
+            'video_rating' : pd.Series( video_ratings , index = np.arange(number) ),
+            'video_length' : pd.Series( video_lengths , index = np.arange(number) ),
+            'video_category' : pd.Series( video_categories , index = np.arange(number) ),
+            'video_author' : pd.Series( video_authors , index = np.arange(number) ),
+            'video_publish_date' : pd.Series( video_publish_dates , index = np.arange(number) ),
+        }
+        print( data )
+        df = pd.DataFrame( data )
+        df = pd.concat( [ initial, df ], ignore_index = True )
+        print( df )
+        df.to_csv( 'Data/video_data.csv', index = False )
 
-class read:
+
+
+class read :
     @staticmethod
-    def get_titles():
-        with open('data/Video titles.txt', 'r') as fin:
-            titles_list = fin.readlines()
-            return titles_list
+    def get_titles() :
+        df = read.get_df_from_csv()
+        return df['video_title'].tolist()
     @staticmethod
-    def get_views():
-        with open('data/Video views.txt', 'r') as fin:
-            views_list = fin.readlines()
-            return views_list
+    def get_views() :
+        df = read.get_df_from_csv()
+        return df['video_views'].tolist()
+    
     @staticmethod
-    def get_ratings():
-        with open('data/Video ratings.txt', 'r') as fin:
-            ratings_list = fin.readlines()
-            return ratings_list
+    def get_ratings() :
+        df = read.get_df_from_csv()
+        return df['video_rating'].tolist()
+    
     @staticmethod
-    def get_publish_dates():
-        with open('data/Video publish_dates.txt', 'r') as fin:
-            publish_dates_list = fin.readlines()
-            return publish_dates_list
+    def get_publish_dates() :
+        df = read.get_df_from_csv()
+        return df['video_publish_date'].tolist()
+    
     @staticmethod
-    def get_lengths():
-        with open('data/Video lengths.txt', 'r') as fin:
-            lengths_list = fin.readlines()
-            return lengths_list
+    def get_lengths() :
+        df = read.get_df_from_csv()
+        return df['video_length'].tolist()
+    
     @staticmethod
-    def get_authors():
-        with open('data/Video authors.txt', 'r') as fin:
-            authors_list = fin.readlines()
-            return authors_list
+    def get_authors() :
+        df = read.get_df_from_csv()
+        return df['video_author'].tolist()
+    
     @staticmethod
-    def get_categories():
-        with open('data/Video categories.txt', 'r') as fin:
-            video_category_list = fin.readlines()
-            return video_category_list
+    def get_categories() :
+        df = read.get_df_from_csv()
+        return df['video_category'].tolist()
+    
     @staticmethod
-    def get_likes():
-        with open('data/Video likes.txt', 'r') as fin:
-            video_likes_list = fin.readlines()
-            return video_likes_list
+    def get_likes() :
+        df = read.get_df_from_csv()
+        return df['video_likes'].tolist()
+    
     @staticmethod
-    def get_dislikes():
-        with open('data/Video dislikes.txt', 'r') as fin:
-            video_dislikes_list = fin.readlines()
-            return video_dislikes_list
+    def get_dislikes() :
+        df = read.get_df_from_csv()
+        return df['video_dislikes'].tolist()
+    
+    @staticmethod
+    def get_df_from_csv() :
+        return pd.read_csv( 'Data/video_data.csv' )
+

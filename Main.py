@@ -742,7 +742,7 @@ def generate_vids() :
                 video_titles_with_urls[j].append(playlist_URLS[j])
                 print(video_titles_with_urls)
                 j = j+1
-            fio.write.add_to_data_playlist(video)
+            fio.write.add_playlist_to_csv(video, len(playlist_URLS))
         done = True
         print(like_counts, dislike_counts)
 
@@ -759,7 +759,7 @@ def main() :
         if TYPE == 'SINGLE' :
             # youtube object used to getting info that is common to both single and playlist downlaods
             yt = pt.YouTube( URL )
-            fio.write.add_to_data( yt )
+            fio.write.add_to_data_csv( yt, URL )
             window.sel_download_win_single( URL, yt )
         elif TYPE == 'PLAYLIST' :
             playlist = pt.Playlist( URL )
