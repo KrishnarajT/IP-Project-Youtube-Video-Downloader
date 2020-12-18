@@ -25,7 +25,7 @@ It aims to let you downlaod youtube vidoes, as well as youtube playlists with ea
 12. Uses tkinter for the created GUI and python's file management to store the user data.
 13. Offers Portability to the user in the form of a single .exe file to download and use.
 14. Uses CPU threading for doing longer tasks more efficiently, thereby making the program run faster.
-15. Makes use of OOP concepts like multitasking, parallel processing, modularity and polymorphism to work efficiently.
+15. Uses CSV Files for Data Storage
 
 
 # Dependencies and System Requirements
@@ -132,10 +132,10 @@ from the Youtube object, you can get data about the youtube video such as
 8. Like count and dislike count
 etc
 
-so After downlaoding a video, this data is written to a single file, stored in `data/video_(attribute)*`
+so After downlaoding a video, this data is written to a single file, stored in `data/video_data.csv`
 
 This data is written such that it does not overlap, and there are no repeated entries
-Storing this data in files is so that it can be retrieved later.
+Storing this data in csv is that it can be retrieved later anytime.
 
 We can retrieve the data from these files using the `fileIO.py` file. This file has a 
 `read` class, that has functions like `get_title()` or `get_views()` etc. These 
