@@ -723,8 +723,6 @@ class loading(tk.Tk):
                     self.destroy()
                     break
 
-
-
 def generate_vids() :
     global done, video_titles, video_titles_with_urls
     video_titles_with_urls = [[] for i in range(len(playlist_URLS))]
@@ -745,8 +743,6 @@ def generate_vids() :
             fio.write.add_playlist_to_csv(video, len(playlist_URLS))
         done = True
         print(like_counts, dislike_counts)
-
-
 
 # Function to run all the things. Function to return to. Function that calls. Function that manages.
 def main() :
