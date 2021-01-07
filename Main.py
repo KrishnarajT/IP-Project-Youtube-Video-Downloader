@@ -734,7 +734,7 @@ def generate_vids() :
         if 'entries' in result:
             video = result['entries']
             j = 0
-            for i, item in enumerate(video):
+            for i, _ in enumerate(video):
                 video_titles.append(result['entries'][i]['title'])
                 video_titles_with_urls[j].append(video_titles[j])
                 video_titles_with_urls[j].append(playlist_URLS[j])
