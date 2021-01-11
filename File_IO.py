@@ -58,7 +58,7 @@ class write:
                 "video_views": pd.Series([video.views], index=[0]),
                 "video_dislikes": pd.Series([video_dislikes], index=[0]),
                 "video_likes": pd.Series([video_likes], index=[0]),
-                "video_rating": pd.Series([round(video.rating, 1)], index=[0]),
+                "video_rating": pd.Series([video.rating, 1], index=[0]),
                 "video_length": pd.Series([conv_len(video.length)], index=[0]),
                 "video_category": pd.Series([video_category], index=[0]),
                 "video_author": pd.Series([video.author], index=[0]),
@@ -99,17 +99,17 @@ class write:
             video_dislikes.append(video[i]["dislike_count"])
             video_views.append(video[i]["view_count"])
             video_lengths.append(conv_len(int(video[i]["duration"])))
-
+            
         data = {
-            "video_title": pd.Series(video_titles),
-            "video_views": pd.Series(video_views),
-            "video_dislikes": pd.Series(video_dislikes),
-            "video_likes": pd.Series(video_likes),
-            "video_rating": pd.Series(round(video_ratings, 1)),
-            "video_length": pd.Series(video_lengths),
-            "video_category": pd.Series(video_categories),
-            "video_author": pd.Series(video_authors),
-            "video_publish_date": pd.Series(video_publish_dates),
+            'video_title' : pd.Series(  video_titles , index = np.arange(number) ),
+            'video_views' : pd.Series(  video_views , index = np.arange(number) ),
+            'video_dislikes' : pd.Series( video_dislikes , index = np.arange(number) ),
+            'video_likes' : pd.Series( video_likes , index = np.arange(number) ),
+            'video_rating' : pd.Series( video_ratings , index = np.arange(number) ),
+            'video_length' : pd.Series( video_lengths , index = np.arange(number) ),
+            'video_category' : pd.Series( video_categories , index = np.arange(number) ),
+            'video_author' : pd.Series( video_authors , index = np.arange(number) ),
+            'video_publish_date' : pd.Series( video_publish_dates , index = np.arange(number) ),
         }
         df = pd.DataFrame(data)
         df = pd.concat([initial, df], ignore_index=True)
