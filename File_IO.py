@@ -58,7 +58,7 @@ class write:
                 "video_views": pd.Series([video.views], index=[0]),
                 "video_dislikes": pd.Series([video_dislikes], index=[0]),
                 "video_likes": pd.Series([video_likes], index=[0]),
-                "video_rating": pd.Series([video.rating, 1], index=[0]),
+                "video_rating": pd.Series([video.rating], index=[0]),
                 "video_length": pd.Series([conv_len(video.length)], index=[0]),
                 "video_category": pd.Series([video_category], index=[0]),
                 "video_author": pd.Series([video.author], index=[0]),
