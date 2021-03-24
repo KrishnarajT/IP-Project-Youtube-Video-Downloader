@@ -35,7 +35,8 @@ def plot_views_vs_videos_line():
 
 def plot_views_vs_videos_hist():
 	"""
-	Plots a graph by looking at the data stored in the files, and then saves the graph in Assets/Graphs as png.
+	Plots a graph by looking at the data stored in the files, 
+	and then saves the graph in Assets/Graphs as png.
 	None -> None
 	"""
 	views_list = fio.read.get_views()
