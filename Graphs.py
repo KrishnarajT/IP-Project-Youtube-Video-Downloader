@@ -3,6 +3,9 @@ import numpy as np
 import File_IO as fio
 import matplotlib.pyplot as plt
 
+# All These functions plot the graph, and then save the figure in a folder.
+# These figues are then accessed by main.py to show in the statistics page.
+
 
 def plot_views_vs_videos():
 	"""
@@ -235,14 +238,14 @@ def plot_categories_vs_videos_pie():
 	plt.pie(sorted_cats, labels = cat_list_disp,explode = (0.1, 0, 0, 0, 0, 0, 0), shadow = True )
 	plt.savefig('Assets/Graphs/categories_pie_chart.png')
 
-# plot_views_vs_videos()
-# plot_ratings_vs_videos_hist()
-# plot_views_vs_videos_hist()
-# plot_views_vs_videos_line()
-# plot_ratings_vs_videos()
-# plot_likes_vs_videos()
-# plot_likes_vs_videos_hist()
-# plot_dislikes_vs_videos()
-# plot_dislikes_vs_videos_hist()
-# plot_categories_vs_videos()
-# plot_categories_vs_videos_pie()
+plot_views_vs_videos()
+plot_ratings_vs_videos_hist()
+plot_views_vs_videos_hist()
+plot_views_vs_videos_line()
+plot_ratings_vs_videos()
+plot_likes_vs_videos()
+plot_likes_vs_videos_hist()
+plot_dislikes_vs_videos()
+plot_dislikes_vs_videos_hist()
+plot_categories_vs_videos()
+plot_categories_vs_videos_pie()

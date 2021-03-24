@@ -2,14 +2,15 @@
 This file is used to define functions that are going to take in a youtube object, and then write the data onto files.
 """
 # import pytube as pt
-import youtube_dl, pandas as pd, numpy as np
-
+import youtube_dl
+import pandas as pd
+import numpy as np
 
 ydl_opts = {}
 
 
 def conv_len(length):
-    minutes_or_hours = length // 60  # 563
+    minutes_or_hours = length // 60
     if minutes_or_hours < 60:
         minutes = minutes_or_hours
         seconds = length - (60 * minutes)
@@ -31,6 +32,8 @@ def conv_len(length):
             vid_len = str(hours) + ":" + str(minutes) + ":" + str(seconds)
 
         return vid_len
+
+# Writes the Data to CSV file using pandas DataFrame
 
 
 class write:
@@ -99,21 +102,23 @@ class write:
             video_dislikes.append(video[i]["dislike_count"])
             video_views.append(video[i]["view_count"])
             video_lengths.append(conv_len(int(video[i]["duration"])))
-            
+
         data = {
-            'video_title' : pd.Series(  video_titles , index = np.arange(number) ),
-            'video_views' : pd.Series(  video_views , index = np.arange(number) ),
-            'video_dislikes' : pd.Series( video_dislikes , index = np.arange(number) ),
-            'video_likes' : pd.Series( video_likes , index = np.arange(number) ),
-            'video_rating' : pd.Series( video_ratings , index = np.arange(number) ),
-            'video_length' : pd.Series( video_lengths , index = np.arange(number) ),
-            'video_category' : pd.Series( video_categories , index = np.arange(number) ),
-            'video_author' : pd.Series( video_authors , index = np.arange(number) ),
-            'video_publish_date' : pd.Series( video_publish_dates , index = np.arange(number) ),
+            'video_title': pd.Series(video_titles, index=np.arange(number)),
+            'video_views': pd.Series(video_views, index=np.arange(number)),
+            'video_dislikes': pd.Series(video_dislikes, index=np.arange(number)),
+            'video_likes': pd.Series(video_likes, index=np.arange(number)),
+            'video_rating': pd.Series(video_ratings, index=np.arange(number)),
+            'video_length': pd.Series(video_lengths, index=np.arange(number)),
+            'video_category': pd.Series(video_categories, index=np.arange(number)),
+            'video_author': pd.Series(video_authors, index=np.arange(number)),
+            'video_publish_date': pd.Series(video_publish_dates, index=np.arange(number)),
         }
         df = pd.DataFrame(data)
         df = pd.concat([initial, df], ignore_index=True)
         df.to_csv("Data/video_data.csv", index=False)
+
+# Functions that Read Data from CSV using pandas, return a list.
 
 
 class read:

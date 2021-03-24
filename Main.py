@@ -1,29 +1,21 @@
-# importing the things
-# import os
-import os
-import tkinter as tk
-import time
+# importing main modules
+import os, requests, re, threading
+import Tags, methods, File_IO as fio
+import tkinter as tk, pytube as pt, youtube_dl
+
+# importing needed Objects from Modules
 from tkinter import ttk
-import pytube as pt
-import requests
+from PIL import ImageTk, Image
 from tkinter.filedialog import askopenfilename
 
-import youtube_dl
-from PIL import ImageTk, Image
-import threading
-import Tags
-import re
-import File_IO as fio
-import methods
-import Graphs
-
-
-# defining Some constants
+# Defining Window Constants
 
 HEIGHT = 720
 WIDTH = 1280
 TYPE = 'SINGLE'
-# INTRO_BGIMG = "C:/Users/littl/Desktop/Programs/Python/Kappa Video Downloader/Assets/Background Images/INTRO BGIMG.png"
+
+# Defining Image Paths as constants
+
 INTRO_BGIMG = "Assets/Background Images/INTRO BGIMG.png"
 VIDDOWN_SINGLE_BGIMG = "Assets/Background Images/VIDDOWN SINGLE BGIMG 3.png"
 VIDDOWN_MULTIPLE_BGIMG = "Assets/Background Images/VIDDOWN MULTIPLE BGIMG.png"
@@ -33,13 +25,15 @@ FILE_SELECT_IMAGE = "Assets/Background Images/FILE SELECT1.png"
 RESTART_IMAGE = 'Assets/Background Images/onemore.png'
 PROCEED_BTN = 'Assets/Background Images/PROCEED BTN.png'
 STATISTICS_BTN = 'Assets/Background Images/STATISTICS BTN.png'
-URL = ''
 FILENAME = os.getcwd()
+
+# Defining General Constants used throughout
+
 maxbytes = 0
 sth = 1
 again = True
 done = False
-video_titles = []
+video_titles = [] # playlist video titles
 video_titles_with_urls = []
 like_counts = []
 dislike_counts = []
@@ -48,11 +42,20 @@ filesize = 0
 playlist_URLS = [ ]
 download_list = [ ]
 sel_stream = '360p'
+URL = ''
 
-'''Class that has functions for displaying windows and doing all the work in the program'''
+
+'''Class that has functions for displaying windows using Tkinter'''
 
 class window :
     
+    # Has 4 Functions :
+
+    # intro_win() - to show the Introduction Window
+    # sel_download_win_single() - to show Download window
+    # sel_downlaod_win_playlist - to show playlist window
+    # statistics - to show the statistics window
+
     @staticmethod
     def intro_win() :
         """
@@ -108,19 +111,23 @@ class window :
         statistics_img = ImageTk.PhotoImage( statistics_img )
         
         # placing the proceed button, that calls the proceed function
-        proceed_btn = tk.Button( canvas, image = proceed_img, command = lambda : [ proceed(), root.destroy() ],
-                                 bg = '#64A8E8', border = 0, activebackground = '#64A8E8' )
+        proceed_btn = tk.Button( canvas, image = proceed_img,
+                                command = lambda : [ proceed(), root.destroy() ],
+                                bg = '#64A8E8', border = 0,
+                                activebackground = '#64A8E8' )
+        
         proceed_btn.place( rely = 0.9, relx = 0.38 )
         
         # placing the Statistics button, that calls the Statistics window
-        statistics_btn = tk.Button( canvas, image = statistics_img, command = lambda : [ statistics(), root.destroy() ],
-                                    bg = '#64A8E8', border = 0, activebackground = '#64A8E8' )
+        statistics_btn = tk.Button( canvas, image = statistics_img,
+                                    command = lambda : [ statistics(), root.destroy() ],
+                                    bg = '#64A8E8', border = 0,
+                                    activebackground = '#64A8E8' )        
         statistics_btn.place( rely = 0.9, relx = 0.51 )
         
         root.mainloop()
     
-    # This is the backup
-    @staticmethod  # this thing works tho...
+    @staticmethod
     def sel_download_win_single( url, video_obj ) :
         """
         this window shows you the thumbnail of the video along with its title and available qualities, also shows you the
@@ -136,11 +143,9 @@ class window :
         def change_dropdown( *args ) :
             global sel_stream
             sel_stream = tkvar.get()
-            print( 'value of the sel stream is : ', sel_stream )
             video_type = video_obj.streams.get_by_itag(
                     list( Tags.tags.keys() )[ list( Tags.tags.values() ).index( sel_stream ) ] )
             mbytes = (round( video_type.filesize / 1000000, 2 )).__str__() + ' MB'
-            print( mbytes )
             file_size_lbl.config( text = mbytes.__str__() )
         
         # opens the file explorer window to select the folder to download, and changes the global file path variable
@@ -272,8 +277,9 @@ class window :
         file_size_lbl.place( rely = 0.525, relx = 0.8 )
         
         # displaying the button for downloading another video, that is restarting the program
-        next_btn = tk.Button( canvas, image = dnimg, command = restart, font = ("Calibre", 16), bg = '#8CB0FF', border = 0,
-                              activebackground = '#8CB0FF' )
+        next_btn = tk.Button( canvas, image = dnimg, command = restart,
+                            font = ("Calibre", 16), bg = '#8CB0FF', border = 0,
+                            activebackground = '#8CB0FF' )
         next_btn.place( rely = 0.01, relx = 0.9 )
         root.mainloop()
     
@@ -454,7 +460,8 @@ class window :
         
         # Displaying the download button
         down_btn = tk.Button( canvas, image = dimg, command = lambda : threading.Thread(
-                target = download ).start(), font = ("Calibre", 16), bg = 'white', border = 0, activebackground = 'white' )
+                target = download ).start(), font = ("Calibre", 16),
+                bg = 'white', border = 0, activebackground = 'white' )
         down_btn.place( rely = 0.9, relx = 0.85 )
         
         # displaying the file selection button
@@ -475,8 +482,9 @@ class window :
         scrollbar.place( rely = 0.53, relx = 0.67, relheight = 0.25 )
         
         # displaying the listbox
-        all_videos = tk.Listbox( canvas, yscrollcommand = scrollbar.set, width = 70, font = ("Calibre", 16, 'italic'), height = 7,
-                                 selectmode = tk.EXTENDED )
+        all_videos = tk.Listbox( canvas, yscrollcommand = scrollbar.set,
+                    width = 70, font = ("Calibre", 16, 'italic'), height = 7,
+                    selectmode = tk.EXTENDED )
         for video in video_titles_with_urls :
             all_videos.insert( tk.END, video )
         all_videos.place( rely = 0.533, relx = 0.02 )
@@ -516,8 +524,9 @@ class window :
         total_vids_lbl.place( rely = 0.51, relx = 0.92 )
         
         # displaying the button for downloading another video, that is restarting the program
-        next_btn = tk.Button( canvas, image = dnimg, command = restart, font = ("Calibre", 16), bg = '#8CB0FF', border = 0,
-                              activebackground = '#8CB0FF' )
+        next_btn = tk.Button( canvas, image = dnimg, command = restart, 
+                        font = ("Calibre", 16), bg = '#8CB0FF', border = 0,
+                        activebackground = '#8CB0FF' )
         next_btn.place( rely = 0.01, relx = 0.9 )
         root.mainloop()
     
@@ -686,6 +695,10 @@ class window :
     
         root.mainloop()
 
+'''Class for displaying the Progress bar using Tkinter'''
+# Gets called when an instance of the progress bar has to be used
+# by a tkinter window (generally from download window or playlist window)
+
 class loading(tk.Tk):
     
     def __init__(self, *args, **kwargs):
@@ -696,19 +709,19 @@ class loading(tk.Tk):
         self.label = tk.Label( self, image = self.imgg )
         self.label.place(relx = -0.01, rely = -0.01)
         self.progress = ttk.Progressbar(self, orient="horizontal",
-                                        length=450 , mode="determinate", style="TProgressbar")
+                        length=450 , mode="determinate", style="TProgressbar")
         self.progress.place(rely = 0.65, relx = -0.01, relheight = 0.08)
         self.bytes = 0
         self.maxbytes = 0
         self.start()
     
-    def start(self):
+    def start(self): # starts counting and incrementing progress bar values.
         self.progress["value"] = 0
         self.maxbytes = int(1.5*len(playlist_URLS))
         self.progress["maximum"] = int(1.5*len(playlist_URLS))
         self.read_bytes()
     
-    def read_bytes(self):
+    def read_bytes(self): # assigns the incremented value to progress bar.
         '''simulate reading 500 bytes; update progress bar'''
         self.bytes += 0.1
         self.progress["value"] = self.bytes
@@ -723,40 +736,47 @@ class loading(tk.Tk):
                     self.destroy()
                     break
 
+
+# Function to Generate the video objects used by pytube to download videos.
+# Also calls the function to write data to CSV file. 
+
 def generate_vids() :
     global done, video_titles, video_titles_with_urls
     video_titles_with_urls = [[] for i in range(len(playlist_URLS))]
-    print(video_titles_with_urls)
+
     ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s', 'quiet':True,})
+
     with ydl:
         result = ydl.extract_info(URL,download=False)
-        print('done')
+
         if 'entries' in result:
             video = result['entries']
             j = 0
+
             for i, _ in enumerate(video):
                 video_titles.append(result['entries'][i]['title'])
                 video_titles_with_urls[j].append(video_titles[j])
                 video_titles_with_urls[j].append(playlist_URLS[j])
-                print(video_titles_with_urls)
                 j = j+1
             fio.write.add_playlist_to_csv(video, len(playlist_URLS))
+            
         done = True
-        print(like_counts, dislike_counts)
 
 # Function to run all the things. Function to return to. Function that calls. Function that manages.
 def main() :
+
     global again, playlist_URLS
+
     while again :
-        # Graphs.plot_ratings_vs_videos()
-        # Graphs.plot_views_vs_videos()
         again = False
         window.intro_win()  # gets the URL
+
         if TYPE == 'SINGLE' :
             # youtube object used to getting info that is common to both single and playlist downlaods
             yt = pt.YouTube( URL )
             fio.write.add_to_data_csv( yt, URL )
             window.sel_download_win_single( URL, yt )
+
         elif TYPE == 'PLAYLIST' :
             playlist = pt.Playlist( URL )
             playlist._video_regex = re.compile( r"\"url\":\"(/watch\?v=[\w-]*)" )
@@ -768,10 +788,12 @@ def main() :
             T2 = threading.Thread( target = app.mainloop() )
             T2.start()
             window.sel_downlaod_win_playlist( playlist )
+
         elif TYPE == 'STATISTICS' :
             window.statistics()
     
     if not again :
         print( 'Thanks for using Kappa video downloader' )
 
-main()
+if __name__ == '__main__':
+    main()
