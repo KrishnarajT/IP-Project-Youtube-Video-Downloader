@@ -15,7 +15,7 @@ def plot_views_vs_videos():
 	views_list = fio.read.get_views()
 	plt.xlabel('Videos')
 	plt.ylabel('views')
-	plt.bar(np.arange(len(views_list)), views_list, color = 'green')
+	plt.bar(range(len(views_list)), views_list, color = 'green')
 	plt.savefig('Assets/Graphs/views_bar_graph.png')
 
 def plot_views_vs_videos_line():
