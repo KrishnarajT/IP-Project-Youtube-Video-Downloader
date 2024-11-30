@@ -31,7 +31,7 @@ Pillow==8.0.1
 prompt-toolkit==3.0.8
 py2exe==0.10.3.0
 pycodestyle==2.6.0
-Pygments==2.7.3
+Pygments==2.7.4
 pyinstaller==4.1
 pyinstaller-hooks-contrib==2020.10
 pylint==2.6.0
